@@ -1,0 +1,129 @@
+DATABASE Vanguard
+PACKAGE sataxi.db
+OUTPUT VGDetailsLoanGomo
+SERVER Vanguard
+SCHEMA dbo
+
+TABLE VG_Details_Loan_Gomo
+    AccountHolder             INT
+    AccountNumber             CHAR(255)
+    AccountStatus             CHAR(1000)
+    ArrearsAccruedInt         DOUBLE
+    BankAccountNumber         CHAR(1000)
+    BankAccountType           CHAR(7)
+    BankName                  CHAR(29)
+    Capital                   DOUBLE
+    chassisnumber             CHAR(1000)
+    DealExpiryDate            DATETIME
+    DealExpiryDateWithArrears DATETIME
+    EasyPay                   CHAR(2000)
+    enginenumber              CHAR(1000)
+    FirstInstalmentDate       DATETIME
+    initialterm               INT
+    InstallmentAmount         DOUBLE
+    InstalmentDay             INT
+    InstalmentsRemaining      INT
+    Interestrate              CHAR(22)
+    LegalFeeBalance           DOUBLE
+    LoanAccruedInt            DOUBLE
+    LoanStartDate             DATETIME
+    MMCode                    CHAR(50)
+    MonthsInArrears           DOUBLE
+    NextInstallmentAmount     DOUBLE
+    OutstandingBalance        DOUBLE
+    PaymentMethod             CHAR(5)
+    Product                   CHAR(1000)
+    registrationnumber        INT
+    SecondaryStatus           CHAR(1000)
+    settlementdate            DATETIME
+    SupplierName              CHAR(1000)
+    TotalDueCS                DOUBLE
+    TotalReceivable           DOUBLE
+    VehicleDescription        CHAR(1000)
+    YearOfManufature          INT
+    StructureCode             CHAR(1000)
+KEY PKEY PRIMARY AccountNumber
+
+PROC SelectByAccountNumber
+INPUT
+    AccountNumber   CHAR
+OUTPUT
+    AccountHolder             INT
+    AccountNumber             CHAR
+    AccountStatus             CHAR
+    ArrearsAccruedInt         DOUBLE
+    BankAccountNumber         CHAR
+    BankAccountType           CHAR
+    BankName                  CHAR
+    Capital                   DOUBLE
+    chassisnumber             CHAR
+    DealExpiryDate            DATETIME
+    DealExpiryDateWithArrears DATETIME
+    EasyPay                   CHAR
+    enginenumber              CHAR
+    FirstInstalmentDate       DATETIME
+    initialterm               INT
+    InstallmentAmount         DOUBLE
+    InstalmentDay             INT
+    InstalmentsRemaining      INT
+    Interestrate              CHAR
+    LegalFeeBalance           DOUBLE
+    LoanAccruedInt            DOUBLE
+    LoanStartDate             DATETIME
+    MMCode                    CHAR
+    MonthsInArrears           DOUBLE
+    NextInstallmentAmount     DOUBLE
+    OutstandingBalance        DOUBLE
+    PaymentMethod             CHAR
+    Product                   CHAR
+    registrationnumber        CHAR
+    SecondaryStatus           CHAR
+    settlementdate            DATETIME
+    SupplierName              CHAR
+    TotalDueCS                DOUBLE
+    TotalReceivable           DOUBLE
+    VehicleDescription        CHAR
+    YearOfManufature          INT
+    StructureCode             CHAR
+SQLCODE
+    SELECT
+        AccountHolder,
+        AccountNumber,
+        AccountStatus,
+        ArrearsAccruedInt,
+        BankAccountNumber,
+        BankAccountType,
+        BankName,
+        Capital,
+        chassisnumber,
+        DealExpiryDate,
+        DealExpiryDateWithArrears,
+        EasyPay,
+        enginenumber,
+        FirstInstalmentDate,
+        initialterm,
+        InstallmentAmount,
+        InstalmentDay,
+        InstalmentsRemaining,
+        Interestrate,
+        LegalFeeBalance,
+        LoanAccruedInt,
+        LoanStartDate,
+        MMCode,
+        MonthsInArrears,
+        NextInstallmentAmount,
+        OutstandingBalance,
+        PaymentMethod,
+        Product,
+        registrationnumber,
+        SecondaryStatus,
+        settlementdate,
+        SupplierName,
+        TotalDueCS,
+        TotalReceivable,
+        VehicleDescription,
+        YearOfManufature,
+        StructureCode
+    FROM VG_Details_Loan_Gomo
+    WHERE (AccountNumber LIKE :AccountNumber)
+ENDCODE

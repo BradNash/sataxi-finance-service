@@ -1,0 +1,23 @@
+zaka_leads_batch:
+  # DATABASES
+  Databases:
+    HiveRepository:
+      ConnectString: DRIVER=ODBC Driver 17 for SQL Server;SERVER=$[HIVE_DB_SERVER_HOST_NAME:SATFAPPHIVEUAT03.SATAXIFIN.LOCAL\SQL2012],51172;UID=$[HIVE_DB_USER:bbdvanguard];PWD=$[HIVE_DB_PASSWORD:DubaiSittingTruckRed];ApplicationIntent=ReadWrite;Database=HiveUAT;
+      DBType: mssql
+    MSG:
+      ConnectString: DRIVER={PostgreSQL Unicode};SERVER=$[VANGUARD_DB_SERVER_HOST_NAME:localhost],5432;DATABASE=Vanguard;UID=$[VANGUARD_DB_USER:postgres_admin];PWD=$[VANGUARD_DB_PASSWORD:magical_password];
+      DBType: postgresql_odbc
+  # MESSAGING
+  MessageTypes:
+    ZakaCreateCaseV1:
+      Queue: ZAKA_CREATE_CASE_V1
+  Prompters:
+    KombuAMQPBroker:
+      PrompterType: KombuPrompter
+      ConnectionString: $[AMQP_CONNECTIONSTRING:amqp://guest:guest@localhost:5672//]
+      Exchange: $[AMQP_EXCHANGE:Message_Prompts]
+  #      MaxRetryCount: "3"
+  #      RetryInterval: "30"
+  DefaultPrompter: KombuAMQPBroker
+  DefaultSerializer: bbdcommon.pybus.serialisers.marshmallow_serializer.MarshmallowSerializer
+  PeriodicCheckTime: 250

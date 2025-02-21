@@ -1,0 +1,61 @@
+{
+  "name": "@sataxi/finance-service-api",
+  "version": "0.0.0",
+  "description": "",
+  "author": "BBD",
+  "license": "Proprietary",
+  "private": false,
+  "keywords": [],
+  "main": "",
+  "repository": {
+    "type": "git",
+    "url": "https://bbdstash.bbd.co.za:8443/scm/boa/bbd.services.workflow.git"
+  },
+  "config": {
+    "eslint_glob": "**/*.{js,jsx,ts,tsx}",
+    "stylelint_glob": "**/*.{css,scss,sass}"
+  },
+  "scripts": {
+    "lint": "npm run lint:scripts || npm run lint:styles",
+    "lint:scripts": "cross-var eslint --ignore-path .gitignore \"$npm_package_config_eslint_glob\"",
+    "lint:styles": "cross-var stylelint --ignore-path .gitignore \"$npm_package_config_stylelint_glob\" || exit 0",
+    "lint:fix": "npm run lint:scripts:fix && npm run lint:styles:fix",
+    "lint:scripts:fix": "cross-var prettier-eslint --ignore-path .gitignore \"$npm_package_config_eslint_glob\" --write",
+    "lint:styles:fix": "cross-var stylelint --ignore-path .gitignore \"$npm_package_config_stylelint_glob\" --fix",
+    "build": "npm run build:finance-service-api",
+    "build:finance-service-api": "ng build @sataxi/finance-service-api",
+    "prepackage": "npm run build",
+    "package": "npm run package:finance-service-api",
+    "package:finance-service-api": "cd dist/bbd/finance-service-api && npm pack"
+  },
+  "dependencies": {
+    "@angular/animations": "~9.1.9",
+    "@angular/common": "~9.1.9",
+    "@angular/compiler": "~9.1.9",
+    "@angular/core": "~9.1.9",
+    "@angular/forms": "~9.1.9",
+    "@angular/platform-browser": "~9.1.9",
+    "@angular/platform-browser-dynamic": "~9.1.9",
+    "@angular/router": "~9.1.9",
+    "rxjs": "~6.5.4",
+    "tslib": "^1.10.0",
+    "zone.js": "~0.9.1"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~0.901.7",
+    "@angular-devkit/build-ng-packagr": "~0.901.7",
+    "@angular/cli": "~9.1.7",
+    "@angular/compiler-cli": "~9.1.9",
+    "@angular/language-service": "~9.1.9",
+    "@types/node": "^12.11.1",
+    "@types/jasmine": "~3.5.0",
+    "@types/jasminewd2": "~2.0.3",
+    "codelyzer": "^5.1.2",
+    "cross-var": "^1.1.0",
+    "ng-packagr": "^5.4.0",
+    "ts-node": "~8.3.0",
+    "tsickle": "^0.37.0",
+    "tslint": "~5.15.0",
+    "typescript": "~3.8.3"
+  }
+}

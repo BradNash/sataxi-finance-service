@@ -1,0 +1,24 @@
+DATABASE Vanguard
+PACKAGE sataxi.db
+OUTPUT VGGomoGetStatementDetails
+SERVER Vanguard
+SCHEMA dbo
+
+TABLE VG_GomoGetStatementDetails
+    RowNo                   INT
+    AccountNumber           CHAR(1000)
+    PostDate                DATETIME
+    EffectiveDate           DATETIME
+    TransactionType         CHAR(1000)
+    Narrative               CHAR(1000)
+    DebitAmount             DOUBLE
+    CreditAmount            DOUBLE
+    CustomerAccountType     CHAR(10)
+    SimplifiedDescription   CHAR(264)
+    ArrearsBalance          DOUBLE
+    CapitalBalance          DOUBLE
+    TotalBalance            DOUBLE
+    IDNumber                CHAR(50)
+KEY PKEY PRIMARY AccountNumber
+
+PROC SELECTBY AccountNumber as SelectByAccountNumber

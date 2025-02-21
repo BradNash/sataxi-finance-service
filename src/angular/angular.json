@@ -1,0 +1,41 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "packages",
+  "projects": {
+    "@sataxi/finance-service-api": {
+      "projectType": "library",
+      "root": "packages/sataxi/finance-service-api",
+      "sourceRoot": "packages/sataxi/finance-service-api/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "packages/sataxi/finance-service-api/tsconfig.lib.json",
+            "project": "packages/sataxi/finance-service-api/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "packages/sataxi/finance-service-api/src/test.ts",
+            "tsConfig": "packages/sataxi/finance-service-api/tsconfig.spec.json",
+            "karmaConfig": "packages/sataxi/finance-service-api/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "packages/sataxi/finance-service-api/tsconfig.lib.json",
+              "packages/sataxi/finance-service-api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "@sataxi/finance-service-api"
+}

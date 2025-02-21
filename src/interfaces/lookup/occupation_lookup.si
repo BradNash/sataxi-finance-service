@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT OccupationLookup
+SERVER finance
+SCHEMA finance
+
+TABLE Occupation
+    occupationID                IDENTITY
+    occupation               CHAR(100)
+ 
+
+KEY PKEY PRIMARY occupationID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY occupation as SelectByOccupation
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

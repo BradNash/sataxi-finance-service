@@ -1,0 +1,39 @@
+DATABASE finance
+PACKAGE sataxi.finance.db
+OUTPUT signio_loan_details
+SERVER finance
+SCHEMA finance
+
+TABLE SignioLoanDetails
+    case_no                   INT
+    loan_application_details  JSON
+    campaign                  INT
+    processed                 INT DEFAULT "0"
+    processed_date            DATETIME NULL
+
+KEY PKEY PRIMARY case_no
+
+PROC INSERT
+PROC SELECTONE FOR UPDATE
+PROC SELECTONE
+PROC UPDATE
+
+/*----------------------------------------
+        SELECT FAILED APPLICATIONS
+----------------------------------------*/
+PROC SELECTBY processed as SelectFailedApplications
+
+/*----------------------------------------
+    SELECT LATEST APPLICATION DETAILS
+----------------------------------------*/
+PROC SelectLatestLoanDetails
+INPUT
+    idNumber       CHAR(13)
+OUTPUT
+     loan_application_details  =
+SQLCODE
+    SELECT
+      loan_application_details
+    FROM finance.SignioLoanDetails sld
+    WHERE loan_application_details -> 'eApplication' ->> 'customerIdNumber' = :idNumber ORDER BY case_no desc LIMIT 1;
+ENDCODE

@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT AgreementLookup
+SERVER finance
+SCHEMA finance
+
+TABLE Agreement
+    agreementID                IDENTITY
+    description                CHAR(100)
+ 
+
+KEY PKEY PRIMARY agreementID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY description as SelectByDescription
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

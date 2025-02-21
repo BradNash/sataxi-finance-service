@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT LanguageLookup
+SERVER finance
+SCHEMA finance
+
+TABLE Language
+    languageID                IDENTITY
+    description               CHAR(100)
+ 
+
+KEY PKEY PRIMARY languageID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY description as SelectByDescription
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

@@ -1,0 +1,4679 @@
+components:
+  schemas:
+    AppDetails:
+      properties:
+        itcConcentIndicator:
+          default: 'No'
+          type: string
+        marketingConsentIndicator:
+          default: 'No'
+          type: string
+        outstandingServiceConsent:
+          default: 'No'
+          type: string
+      type: object
+    ApplicantExpenses:
+      properties:
+        customerDisposableIncome:
+          default: 0.0
+          type: number
+        customerTotalExpenses:
+          default: 0.0
+          type: number
+        spouseDisposableIncome:
+          default: 0.0
+          type: number
+        spouseTotalExpenses:
+          default: 0.0
+          type: number
+        sumExpensesCustomerBondPayment:
+          default: 0.0
+          type: number
+        sumExpensesCustomerClothingAccounts:
+          default: 0.0
+          type: number
+        sumExpensesCustomerCreditCardRepayments:
+          default: 0.0
+          type: number
+        sumExpensesCustomerEducationCosts:
+          default: 0.0
+          type: number
+        sumExpensesCustomerFoodAndEntertainment:
+          default: 0.0
+          type: number
+        sumExpensesCustomerFurnitureAccounts:
+          default: 0.0
+          type: number
+        sumExpensesCustomerHouseholdExpenses:
+          default: 0.0
+          type: number
+        sumExpensesCustomerInsurancePayments:
+          default: 0.0
+          type: number
+        sumExpensesCustomerLoanRepayments:
+          default: 0.0
+          type: number
+        sumExpensesCustomerLoansRepaidViaPayrollDeduc:
+          default: 0.0
+          type: number
+        sumExpensesCustomerMaintenance:
+          default: 0.0
+          type: number
+        sumExpensesCustomerOtherExpenses:
+          default: 0.0
+          type: number
+        sumExpensesCustomerOtherExpenses2:
+          default: 0.0
+          type: number
+        sumExpensesCustomerOtherExpenses3:
+          default: ''
+          type: string
+        sumExpensesCustomerOtherExpensesDesc:
+          default: ''
+          type: string
+        sumExpensesCustomerOtherExpensesDesc2:
+          default: ''
+          type: string
+        sumExpensesCustomerOtherExpensesDesc3:
+          default: ''
+          type: string
+        sumExpensesCustomerOverdraftRepayments:
+          default: 0.0
+          type: number
+        sumExpensesCustomerRates:
+          default: 0.0
+          type: number
+        sumExpensesCustomerRent:
+          default: 0.0
+          type: number
+        sumExpensesCustomerSecurity:
+          default: 0.0
+          type: number
+        sumExpensesCustomerTelephonePayments:
+          default: 0.0
+          type: number
+        sumExpensesCustomerTransport:
+          default: 0.0
+          type: number
+        sumExpensesCustomerVehicleInstallments:
+          default: 0.0
+          type: number
+        sumExpensesSpouseBondPayment:
+          default: 0.0
+          type: number
+        sumExpensesSpouseClothingAccounts:
+          default: 0.0
+          type: number
+        sumExpensesSpouseCreditCardRepayments:
+          default: 0.0
+          type: number
+        sumExpensesSpouseEducationCosts:
+          default: 0.0
+          type: number
+        sumExpensesSpouseFoodAndEntertainment:
+          default: 0.0
+          type: number
+        sumExpensesSpouseFurnitureAccounts:
+          default: 0.0
+          type: number
+        sumExpensesSpouseHouseholdExpenses:
+          default: 0.0
+          type: number
+        sumExpensesSpouseLoanRepayments:
+          default: 0.0
+          type: number
+        sumExpensesSpouseLoansRepaidViaPayrollDeduc:
+          default: 0.0
+          type: number
+        sumExpensesSpouseMaintenance:
+          default: 0.0
+          type: number
+        sumExpensesSpouseOtherExpenses:
+          default: 0.0
+          type: number
+        sumExpensesSpouseOtherExpenses2:
+          default: 0.0
+          type: number
+        sumExpensesSpouseOtherExpenses3:
+          default: ''
+          type: string
+        sumExpensesSpouseOtherExpensesDesc:
+          default: ''
+          type: string
+        sumExpensesSpouseOtherExpensesDesc2:
+          default: ''
+          type: string
+        sumExpensesSpouseOtherExpensesDesc3:
+          default: ''
+          type: string
+        sumExpensesSpouseOverdraftRepayments:
+          default: 0.0
+          type: number
+        sumExpensesSpouseRates:
+          default: 0.0
+          type: number
+        sumExpensesSpouseRent:
+          default: 0.0
+          type: number
+        sumExpensesSpouseSecurity:
+          default: 0.0
+          type: number
+        sumExpensesSpouseTelephonePayments:
+          default: 0.0
+          type: number
+        sumExpensesSpouseTransport:
+          default: 0.0
+          type: number
+        sumExpensesSpouseVehicleInstallments:
+          default: 0.0
+          type: number
+        totalCustomerBondAndRentPayment:
+          default: 0.0
+          type: number
+      type: object
+    ApplicantIncome:
+      properties:
+        addIncomeCustomerNetTakeHomePay:
+          default: 0.0
+          type: number
+        addIncomeCustomerOtherIncome:
+          default: 0.0
+          type: number
+        addIncomeCustomerOtherIncomeDescription:
+          default: 0.0
+          type: number
+        addIncomeSpouseNetTakeHomePay:
+          default: 0.0
+          type: number
+        addIncomeSpouseOtherIncome:
+          default: 0.0
+          type: number
+        addIncomeSpouseOtherIncomeDescription:
+          default: 0.0
+          type: number
+        customerTotalMonthlyIncome:
+          default: 0.0
+          type: number
+        reimbursement:
+          default: 0.0
+          type: number
+        sourceOfIncome:
+          default: ''
+          type: string
+        spouseTotalMonthlyIncome:
+          default: 0.0
+          type: number
+        sumIncomeCustomerCarAllowance:
+          default: 0.0
+          type: number
+        sumIncomeCustomerGrossRemuneration:
+          default: 0.0
+          type: number
+        sumIncomeCustomerMaintenance:
+          default: 0.0
+          type: number
+        sumIncomeCustomerMonthlyCommission:
+          default: 0.0
+          type: number
+        sumIncomeCustomerOvertime:
+          default: 0.0
+          type: number
+        sumIncomeCustomerRental:
+          default: 0.0
+          type: number
+        sumIncomeSpouseCarAllowance:
+          default: 0.0
+          type: number
+        sumIncomeSpouseGrossRemuneration:
+          default: 0.0
+          type: number
+        sumIncomeSpouseMaintenance:
+          default: 0.0
+          type: number
+        sumIncomeSpouseMonthlyCommission:
+          default: 0.0
+          type: number
+        sumIncomeSpouseRental:
+          default: 0.0
+          type: number
+      type: object
+    Application:
+      properties:
+        advertisementReference:
+          default: ''
+          type: string
+        customerDateOfBirth:
+          default: '1900-01-01 00:00:00'
+          type: string
+        customerDriversLicenseVerified:
+          default: 'No'
+          type: string
+        customerFirstName:
+          default: ''
+          type: string
+        customerIdNumber:
+          default: ''
+          type: string
+        customerIdType:
+          default: ''
+          type: string
+        customerIdVerified:
+          default: 'No'
+          type: string
+        customerMiddleName:
+          default: ''
+          type: string
+        customerSurname:
+          default: ''
+          type: string
+        dealerCode:
+          default: ''
+          type: string
+        sataxiFinance:
+          default: 'No'
+          type: string
+        thirdPartyEmail:
+          default: ''
+          type: string
+        typeOfSale:
+          default: ''
+          type: string
+      type: object
+    BankStatementConsent:
+      properties:
+        customerBankStatementConsentIndicator:
+          default: 'No'
+          type: string
+      type: object
+    BankingDetails:
+      properties:
+        accountNumberToSettle:
+          default: ''
+          type: string
+        accountNumberToSettle2:
+          default: ''
+          type: string
+        bankNameAccToSettle:
+          default: ''
+          type: string
+        chkAccApplicant:
+          default: 'No'
+          type: string
+        customerBankAccountBank:
+          default: ''
+          type: string
+        customerBankAccountBranchCode:
+          default: ''
+          type: string
+        customerBankAccountBranchName:
+          default: ''
+          type: string
+        customerBankAccountHolder:
+          default: ''
+          type: string
+        customerBankAccountNumber:
+          default: ''
+          type: string
+        customerBankAccountStatus:
+          default: ''
+          type: string
+        customerBankAccountType:
+          default: ''
+          type: string
+        customerSalaryDay:
+          default: ''
+          type: string
+        monthlyInstallmentOnAccountToBeSettled:
+          default: 0.0
+          type: number
+        monthlyInstallmentOnAccountToBeSettled2:
+          default: 0.0
+          type: number
+        paymentDate:
+          default: '01'
+          type: string
+        paymentMethod:
+          default: ''
+          type: string
+        settleExistingInstallment:
+          default: 'No'
+          type: string
+        settlementAmount:
+          default: 0.0
+          type: number
+        settlementAmount2:
+          default: 0.0
+          type: number
+        validBankAccount:
+          default: 'No'
+          type: string
+      type: object
+    BankingDetailsLookupResponse:
+      properties:
+        accountNo:
+          default: null
+          nullable: true
+          type: string
+        bankName:
+          default: null
+          nullable: true
+          type: string
+        bankReference:
+          default: null
+          nullable: true
+          type: string
+        branchType:
+          default: null
+          nullable: true
+          type: string
+        expr1:
+          default: null
+          nullable: true
+          type: string
+      type: object
+    BankingDetailsLookupResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/BankingDetailsLookupResponse'
+          type: array
+      type: object
+    BeeActStatus:
+      properties:
+        isBEEActBeneficiary:
+          default: 'No'
+          type: string
+      type: object
+    CampaignDetailsResponse:
+      properties:
+        createdDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        noteCategory:
+          default: null
+          nullable: true
+          type: string
+        noteSystem:
+          default: null
+          nullable: true
+          type: string
+        noteText:
+          default: null
+          nullable: true
+          type: string
+        userName:
+          default: null
+          nullable: true
+          type: string
+      type: object
+    CampaignDetailsResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/CampaignDetailsResponse'
+          type: array
+      type: object
+    CollectSmartClientDetailsResponse:
+      properties:
+        accountHolder:
+          default: null
+          nullable: true
+          type: string
+        accountNumber:
+          default: null
+          nullable: true
+          type: string
+        accountStatus:
+          default: null
+          nullable: true
+          type: string
+        agent:
+          default: null
+          nullable: true
+          type: string
+        arrearsAccruedInt:
+          default: null
+          nullable: true
+          type: integer
+        arrearsAmountatHo:
+          default: null
+          nullable: true
+          type: integer
+        attorney:
+          default: null
+          nullable: true
+          type: string
+        capital:
+          default: null
+          nullable: true
+          type: integer
+        cartrackSignalDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        chassisnumber:
+          default: null
+          nullable: true
+          type: string
+        dateofJudgement:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        dealExpiryDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        dealExpiryDateWithArrears:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        deviceHealth:
+          default: null
+          nullable: true
+          type: string
+        easyPay:
+          default: null
+          nullable: true
+          type: string
+        enginenumber:
+          default: null
+          nullable: true
+          type: string
+        fieldAgent:
+          default: null
+          nullable: true
+          type: string
+        fieldAgentInstruction:
+          default: null
+          nullable: true
+          type: string
+        firstInstalmentDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        handoverDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        initialterm:
+          default: null
+          nullable: true
+          type: integer
+        installmentAmount:
+          default: null
+          nullable: true
+          type: integer
+        instalmentsRemaining:
+          default: null
+          nullable: true
+          type: integer
+        interestrate:
+          default: null
+          nullable: true
+          type: string
+        lastPaymentAmount:
+          default: null
+          nullable: true
+          type: integer
+        lastPaymentDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        legalAdministrator:
+          default: null
+          nullable: true
+          type: string
+        legalFeeBalance:
+          default: null
+          nullable: true
+          type: integer
+        loanAccruedInt:
+          default: null
+          nullable: true
+          type: integer
+        lsCaseNumber:
+          default: null
+          nullable: true
+          type: string
+        monthsInArrears:
+          default: null
+          nullable: true
+          type: integer
+        nextInstallmentAmount:
+          default: null
+          nullable: true
+          type: integer
+        outstandingBalance:
+          default: null
+          nullable: true
+          type: integer
+        paymentMtd:
+          default: null
+          nullable: true
+          type: integer
+        pendingActivity:
+          default: null
+          nullable: true
+          type: integer
+        product:
+          default: null
+          nullable: true
+          type: string
+        registrationnumber:
+          default: null
+          nullable: true
+          type: integer
+        secondaryStatus:
+          default: null
+          nullable: true
+          type: string
+        settlementdate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        shortOver:
+          default: null
+          nullable: true
+          type: integer
+        source:
+          default: null
+          nullable: true
+          type: string
+        summonsIssueDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        summonsServedDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        supervisor:
+          default: null
+          nullable: true
+          type: string
+        totalDueCs:
+          default: null
+          nullable: true
+          type: integer
+        totalReceivable:
+          default: null
+          nullable: true
+          type: integer
+        vehicleDescription:
+          default: null
+          nullable: true
+          type: string
+        warrantIssuedDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        yearofmanufacture:
+          default: null
+          nullable: true
+          type: integer
+      type: object
+    DB_AgreementSelectAll:
+      properties:
+        agreementID:
+          type: integer
+        description:
+          type: string
+      required:
+      - agreementID
+      - description
+      type: object
+    DB_AgreementSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_AgreementSelectAll'
+          type: array
+      type: object
+    DB_AgreementSelectByDescription:
+      properties:
+        agreementID:
+          type: integer
+        description:
+          type: string
+      required:
+      - agreementID
+      - description
+      type: object
+    DB_AreaSelectAll:
+      properties:
+        areaID:
+          type: integer
+        areaName:
+          type: string
+      required:
+      - areaID
+      - areaName
+      type: object
+    DB_AreaSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_AreaSelectAll'
+          type: array
+      type: object
+    DB_AreaSelectByAreaName:
+      properties:
+        areaID:
+          type: integer
+        areaName:
+          type: string
+      required:
+      - areaID
+      - areaName
+      type: object
+    DB_ArticleTypeSelectAll:
+      properties:
+        type:
+          type: string
+        typeID:
+          type: integer
+      required:
+      - type
+      - typeID
+      type: object
+    DB_ArticleTypeSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_ArticleTypeSelectAll'
+          type: array
+      type: object
+    DB_ArticleTypeSelectByType:
+      properties:
+        type:
+          type: string
+        typeID:
+          type: integer
+      required:
+      - type
+      - typeID
+      type: object
+    DB_BankSelectAll:
+      properties:
+        bankID:
+          type: integer
+        bankName:
+          type: string
+      required:
+      - bankID
+      - bankName
+      type: object
+    DB_BankSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_BankSelectAll'
+          type: array
+      type: object
+    DB_BankSelectByBankName:
+      properties:
+        bankID:
+          type: integer
+        bankName:
+          type: string
+      required:
+      - bankID
+      - bankName
+      type: object
+    DB_ClientTypeSelectAll:
+      properties:
+        clientTypeID:
+          type: integer
+        type:
+          type: string
+      required:
+      - clientTypeID
+      - type
+      type: object
+    DB_ClientTypeSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_ClientTypeSelectAll'
+          type: array
+      type: object
+    DB_ClientTypeSelectByType:
+      properties:
+        clientTypeID:
+          type: integer
+        type:
+          type: string
+      required:
+      - clientTypeID
+      - type
+      type: object
+    DB_CountrySelectAll:
+      properties:
+        countryID:
+          type: integer
+        countryName:
+          type: string
+      required:
+      - countryID
+      - countryName
+      type: object
+    DB_CountrySelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_CountrySelectAll'
+          type: array
+      type: object
+    DB_CountrySelectByCountryName:
+      properties:
+        countryID:
+          type: integer
+        countryName:
+          type: string
+      required:
+      - countryID
+      - countryName
+      type: object
+    DB_DealerCodeSelectAll:
+      properties:
+        dealerCode:
+          type: string
+        dealerCodeID:
+          type: integer
+      required:
+      - dealerCode
+      - dealerCodeID
+      type: object
+    DB_DealerCodeSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_DealerCodeSelectAll'
+          type: array
+      type: object
+    DB_DealerCodeSelectByCode:
+      properties:
+        dealerCode:
+          type: string
+        dealerCodeID:
+          type: integer
+      required:
+      - dealerCode
+      - dealerCodeID
+      type: object
+    DB_EmployerIndustryTypeSelectAll:
+      properties:
+        industryTypeID:
+          type: integer
+        type:
+          type: string
+      required:
+      - industryTypeID
+      - type
+      type: object
+    DB_EmployerIndustryTypeSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_EmployerIndustryTypeSelectAll'
+          type: array
+      type: object
+    DB_EmployerIndustryTypeSelectByType:
+      properties:
+        industryTypeID:
+          type: integer
+        type:
+          type: string
+      required:
+      - industryTypeID
+      - type
+      type: object
+    DB_InsuranceBrokerSelectAll:
+      properties:
+        brokerID:
+          type: integer
+        brokerName:
+          type: string
+      required:
+      - brokerID
+      - brokerName
+      type: object
+    DB_InsuranceBrokerSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_InsuranceBrokerSelectAll'
+          type: array
+      type: object
+    DB_InsuranceBrokerSelectByBrokerName:
+      properties:
+        brokerID:
+          type: integer
+        brokerName:
+          type: string
+      required:
+      - brokerID
+      - brokerName
+      type: object
+    DB_InsuranceCompanySelectAll:
+      properties:
+        companyID:
+          type: integer
+        companyName:
+          type: string
+      required:
+      - companyID
+      - companyName
+      type: object
+    DB_InsuranceCompanySelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_InsuranceCompanySelectAll'
+          type: array
+      type: object
+    DB_InsuranceCompanySelectByCompanyName:
+      properties:
+        companyID:
+          type: integer
+        companyName:
+          type: string
+      required:
+      - companyID
+      - companyName
+      type: object
+    DB_LanguageSelectAll:
+      properties:
+        description:
+          type: string
+        languageID:
+          type: integer
+      required:
+      - description
+      - languageID
+      type: object
+    DB_LanguageSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_LanguageSelectAll'
+          type: array
+      type: object
+    DB_LanguageSelectByDescription:
+      properties:
+        description:
+          type: string
+        languageID:
+          type: integer
+      required:
+      - description
+      - languageID
+      type: object
+    DB_OccupationSelectAll:
+      properties:
+        occupation:
+          type: string
+        occupationID:
+          type: integer
+      required:
+      - occupation
+      - occupationID
+      type: object
+    DB_OccupationSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_OccupationSelectAll'
+          type: array
+      type: object
+    DB_OccupationSelectByOccupation:
+      properties:
+        occupation:
+          type: string
+        occupationID:
+          type: integer
+      required:
+      - occupation
+      - occupationID
+      type: object
+    DB_RelationSelectAll:
+      properties:
+        relative:
+          type: string
+        relativeID:
+          type: integer
+      required:
+      - relative
+      - relativeID
+      type: object
+    DB_RelationSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_RelationSelectAll'
+          type: array
+      type: object
+    DB_RelationSelectByRelative:
+      properties:
+        relative:
+          type: string
+        relativeID:
+          type: integer
+      required:
+      - relative
+      - relativeID
+      type: object
+    DB_TypeOfSaleSelectAll:
+      properties:
+        type:
+          type: string
+        typeOfSaleID:
+          type: integer
+      required:
+      - type
+      - typeOfSaleID
+      type: object
+    DB_TypeOfSaleSelectAll_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/DB_TypeOfSaleSelectAll'
+          type: array
+      type: object
+    DB_TypeOfSaleSelectByType:
+      properties:
+        type:
+          type: string
+        typeOfSaleID:
+          type: integer
+      required:
+      - type
+      - typeOfSaleID
+      type: object
+    Documents:
+      properties:
+        disabled:
+          default: false
+          type: boolean
+        documentName:
+          default: null
+          nullable: true
+          type: string
+        identifier:
+          default: null
+          nullable: true
+          type: string
+        reason:
+          default: null
+          nullable: true
+          type: string
+      type: object
+    DocumentsResponse:
+      properties:
+        documents:
+          default: null
+          items:
+            $ref: '#/components/schemas/Documents'
+          nullable: true
+          type: array
+        footer:
+          default: null
+          nullable: true
+          type: string
+        stampData:
+          default: null
+          nullable: true
+          type: string
+      type: object
+    EmployerDetails:
+      properties:
+        customerEmploymentStatus:
+          default: ''
+          type: string
+        customerOccupation:
+          default: Director
+          type: string
+        customerPeriodAtCurrentEmployerMonths:
+          default: 0
+          type: integer
+        customerPeriodAtCurrentEmployerYears:
+          default: 0
+          type: integer
+        customerPeriodAtPreviousEmployerMonths:
+          default: 0
+          type: integer
+        customerPeriodAtPreviousEmployerYears:
+          default: 0
+          type: integer
+        customerType:
+          default: Self Employed(Non-Professional)
+          type: string
+        employeeNumber:
+          default: ''
+          type: string
+        employerAddressLine1:
+          default: ''
+          type: string
+        employerAddressLine2:
+          default: ''
+          type: string
+        employerCity:
+          default: ''
+          type: string
+        employerIndustryType:
+          default: Transportation
+          type: string
+        employerName:
+          default: ''
+          type: string
+        employerPostalCode:
+          default: ''
+          type: string
+        employerSuburb:
+          default: ''
+          type: string
+        employerType:
+          default: Self Employed
+          type: string
+        employmentLevel:
+          default: Skilled Worker
+          type: string
+        isAbsaEmployee:
+          default: 'No'
+          type: string
+        isBankEmployee:
+          default: 'No'
+          type: string
+      type: object
+    FailedResponse:
+      properties: {}
+      type: object
+    FinanceDetails:
+      properties:
+        TCMIndicator:
+          default: 'No'
+          type: string
+        advance:
+          default: 'No'
+          type: string
+        agreementType:
+          default: ''
+          type: string
+        dealType:
+          default: ''
+          type: string
+        deposit:
+          default: 0.0
+          type: number
+        financeInitiationFees:
+          default: 'Yes'
+          type: string
+        interestRate:
+          default: 0.0
+          type: number
+        newRate:
+          default: 0
+          type: integer
+        paymentFrequency:
+          default: ''
+          type: string
+        purchasePrice:
+          default: 0.0
+          type: number
+        rateIndicator:
+          default: ''
+          type: string
+        repaymentPeriod:
+          default: ''
+          type: string
+        residualValue:
+          default: 0.0
+          type: number
+        schemeCodeMFC:
+          default: 0
+          type: integer
+        schemeCodeWesbank:
+          default: 0
+          type: integer
+        shockAbsorberWesbank:
+          default: 'No'
+          type: string
+        sourceOfDeposit:
+          default: ''
+          type: string
+        takeABreakMonth:
+          default: ''
+          type: string
+      type: object
+    InstalmentBreakdownLookUpResponse:
+      properties:
+        accountNumber:
+          default: null
+          nullable: true
+          type: string
+        description:
+          default: null
+          nullable: true
+          type: string
+        instalmentAmount:
+          default: null
+          nullable: true
+          type: number
+        valueDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+      type: object
+    InstalmentBreakdownLookUpResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/InstalmentBreakdownLookUpResponse'
+          type: array
+      type: object
+    InsuranceClaimRequest:
+      properties:
+        IsInsSettlement:
+          type: boolean
+        accountNumber:
+          type: string
+        caseNumber:
+          type: string
+        continueCartrack:
+          type: boolean
+        customerEmail:
+          default: null
+          nullable: true
+          type: string
+        customerID:
+          default: null
+          nullable: true
+          type: string
+        dateOfLoss:
+          type: string
+        legalFeesPayble:
+          type: string
+        legalNotes:
+          type: string
+        settlementType:
+          description: settlement_type
+          enum:
+          - EARLY_SETTLEMENT
+          - DEAL_TAKEOVER_GENERIC
+          - DEAL_TAKEOVER_DECEASED
+          - INSURANCE_CLAIM
+          - STATEMENT
+          type: string
+        timeout:
+          default: null
+          nullable: true
+          type: integer
+      required:
+      - IsInsSettlement
+      - accountNumber
+      - caseNumber
+      - continueCartrack
+      - dateOfLoss
+      - legalFeesPayble
+      - legalNotes
+      - settlementType
+      type: object
+    InsuranceClaimResponse:
+      properties:
+        fileName:
+          default: null
+          nullable: true
+          type: string
+        guid:
+          default: ''
+          nullable: true
+          type: string
+        message:
+          default: null
+          nullable: true
+          type: string
+        path:
+          default: null
+          nullable: true
+          type: string
+        payload:
+          default: ''
+          nullable: true
+          type: string
+      type: object
+    LiabilityDetails:
+      properties:
+        coDebtor:
+          default: ''
+          type: string
+        coDebtorLiabilityIndicator:
+          default: 'No'
+          type: string
+        guarantor:
+          default: ''
+          type: string
+        guarantorLiabilityIndicator:
+          default: 'No'
+          type: string
+        surety:
+          default: ''
+          type: string
+        suretyLiabilityIndicator:
+          default: 'No'
+          type: string
+      type: object
+    LoanAccountLookupResponse:
+      properties:
+        accountNumber:
+          default: null
+          nullable: true
+          type: string
+        accountStatus:
+          default: null
+          nullable: true
+          type: string
+        bankAccountNumber:
+          default: null
+          nullable: true
+          type: string
+        bankAccountType:
+          default: null
+          nullable: true
+          type: string
+        bankName:
+          default: null
+          nullable: true
+          type: string
+        customerName:
+          default: null
+          nullable: true
+          type: string
+        emailAddress:
+          default: null
+          nullable: true
+          type: string
+        idNo:
+          default: null
+          nullable: true
+          type: string
+        instalmentDay:
+          default: null
+          nullable: true
+          type: string
+        loanStartDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        mobile:
+          default: null
+          nullable: true
+          type: string
+        nextInstalmentDate:
+          default: null
+          nullable: true
+          type: string
+        paymentType:
+          default: null
+          nullable: true
+          type: string
+        postalAddress:
+          default: null
+          nullable: true
+          type: string
+        residentialAddress:
+          default: null
+          nullable: true
+          type: string
+        taxiAssociation:
+          default: null
+          nullable: true
+          type: string
+        totalDueCS:
+          default: null
+          nullable: true
+          type: number
+      type: object
+    LoanAccountLookupResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/LoanAccountLookupResponse'
+          type: array
+      type: object
+    LoanDetailsLookupResponse:
+      properties:
+        accountHolder:
+          default: null
+          nullable: true
+          type: string
+        accountNumber:
+          default: null
+          nullable: true
+          type: string
+        accountStatus:
+          default: null
+          nullable: true
+          type: string
+        bankAccountNumber:
+          default: null
+          nullable: true
+          type: string
+        bankAccountType:
+          default: null
+          nullable: true
+          type: string
+        bankName:
+          default: null
+          nullable: true
+          type: string
+        capital:
+          default: null
+          nullable: true
+          type: number
+        carTrackSignalDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        chassisNumber:
+          default: null
+          nullable: true
+          type: string
+        companyName:
+          default: null
+          nullable: true
+          type: string
+        dealExpiryDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        dealExpiryDateWithArrears:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        deviceHealth:
+          default: null
+          nullable: true
+          type: string
+        easyPay:
+          default: null
+          nullable: true
+          type: string
+        engineNumber:
+          default: null
+          nullable: true
+          type: string
+        fieldAgent:
+          default: null
+          nullable: true
+          type: string
+        fieldAgentInstructions:
+          default: null
+          nullable: true
+          type: string
+        firstInstalmentDate:
+          default: null
+          format: date
+          nullable: true
+          type: string
+        initialTerm:
+          default: null
+          nullable: true
+          type: integer
+        installmentAmount:
+          default: null
+          nullable: true
+          type: number
+        instalmentDay:
+          default: null
+          nullable: true
+          type: integer
+        instalmentsRemaining:
+          default: null
+          nullable: true
+          type: integer
+        interestRate:
+          default: null
+          nullable: true
+          type: string
+        legalFeeBalance:
+          default: null
+          nullable: true
+          type: number
+        loanAccruedInt:
+          default: null
+          nullable: true
+          type: number
+        loanStartDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        monthsInArrears:
+          default: null
+          nullable: true
+          type: number
+        ncrRegNo:
+          default: null
+          nullable: true
+          type: string
+        nextInstallmentAmount:
+          default: null
+          nullable: true
+          type: number
+        nextInstalmentDate:
+          default: null
+          format: date
+          nullable: true
+          type: string
+        outstandingBalance:
+          default: null
+          nullable: true
+          type: number
+        paymentMethod:
+          default: null
+          nullable: true
+          type: string
+        previousCompanyName:
+          default: null
+          nullable: true
+          type: string
+        product:
+          default: null
+          nullable: true
+          type: string
+        registrationNumber:
+          default: null
+          nullable: true
+          type: integer
+        settlementDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        source:
+          default: null
+          nullable: true
+          type: string
+        totalDueCS:
+          default: null
+          nullable: true
+          type: number
+        totalReceivable:
+          default: null
+          nullable: true
+          type: number
+        vehicleDescription:
+          default: null
+          nullable: true
+          type: string
+        yearOfManufacture:
+          default: null
+          nullable: true
+          type: integer
+      type: object
+    LoanDetailsLookupResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/LoanDetailsLookupResponse'
+          type: array
+      type: object
+    NoticeSettlementRequest:
+      properties:
+        accountNumber:
+          type: string
+        noticeDate:
+          format: date-time
+          type: string
+        timeout:
+          default: null
+          nullable: true
+          type: integer
+      required:
+      - accountNumber
+      - noticeDate
+      type: object
+    NoticeSettlementResponse:
+      properties:
+        message:
+          default: null
+          nullable: true
+          type: string
+        noticeEndDate:
+          default: null
+          nullable: true
+          type: string
+        noticeStartDate:
+          default: null
+          nullable: true
+          type: string
+        remainingDays:
+          default: null
+          nullable: true
+          type: string
+      type: object
+    PTPDetailsResponse:
+      properties:
+        accountNumber:
+          default: null
+          nullable: true
+          type: string
+        agentId:
+          default: null
+          nullable: true
+          type: integer
+        campaignDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        campaignId:
+          default: null
+          nullable: true
+          type: integer
+        campaignName:
+          default: null
+          nullable: true
+          type: string
+        clientId:
+          default: null
+          nullable: true
+          type: integer
+        currentPayment:
+          default: null
+          nullable: true
+          type: integer
+        frequency:
+          default: null
+          nullable: true
+          type: string
+        name:
+          default: null
+          nullable: true
+          type: string
+        ptpAmount:
+          default: null
+          nullable: true
+          type: integer
+        ptpCreatedDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        ptpDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        ptpStatus:
+          default: null
+          nullable: true
+          type: string
+        ptpType:
+          default: null
+          nullable: true
+          type: string
+        ptpid:
+          default: null
+          nullable: true
+          type: integer
+        userName:
+          default: null
+          nullable: true
+          type: string
+      type: object
+    PTPDetailsResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/PTPDetailsResponse'
+          type: array
+      type: object
+    PassportDetails:
+      properties:
+        customerPassportDateOfIssue:
+          default: ''
+          type: string
+        customerResidencePermitCountryOfIssue:
+          default: ''
+          type: string
+        customerResidencePermitDateOfIssue:
+          default: ''
+          type: string
+        customerResidencePermitExpiryDate:
+          default: ''
+          type: string
+        customerResidencePermitNumber:
+          default: ''
+          type: string
+        customerResidencePermitType:
+          default: ''
+          type: string
+        customerWorkContractExpiryDate:
+          default: ''
+          type: string
+        passportValidToDate:
+          default: ''
+          type: string
+      type: object
+    PaymentHistory:
+      properties:
+        DebtDisp:
+          default: 'No'
+          type: string
+        administrationOrderIndicator:
+          default: 'No'
+          type: string
+        debtAdmin:
+          default: 'No'
+          type: string
+        debtCounselling:
+          default: 'No'
+          type: string
+        debtReviewIndicator:
+          default: 'No'
+          type: string
+        debtSeqOrder:
+          default: 'No'
+          type: string
+        previousJudgementIndicator:
+          default: 'No'
+          type: string
+      type: object
+    PersonalDetails:
+      properties:
+        countryCitizenship:
+          default: ''
+          type: string
+        countryOfBirth:
+          default: ''
+          type: string
+        customerEmail:
+          default: ''
+          type: string
+        customerGender:
+          default: ''
+          type: string
+        customerGraduate:
+          default: 'No'
+          type: string
+        customerHomePhoneNumber:
+          default: ''
+          type: string
+        customerMaritalContract:
+          default: ''
+          type: string
+        customerMaritalStatus:
+          default: ''
+          type: string
+        customerMobilePhoneNumber:
+          default: ''
+          type: string
+        customerNationality:
+          default: ''
+          type: string
+        customerPreferredContactMethod:
+          default: ''
+          type: string
+        customerPreferredLanguage:
+          default: ''
+          type: string
+        customerRaceEthnicGroup:
+          default: ''
+          type: string
+        customerTitle:
+          default: ''
+          type: string
+        customerWorkPhoneNumber:
+          default: ''
+          type: string
+        customerWorkPhoneNumberType:
+          default: ''
+          type: string
+        dateMarried:
+          default: ''
+          type: string
+        isForeignOrTaxObligation:
+          default: 'No'
+          type: string
+        isMultipleNationalities:
+          default: 'No'
+          type: string
+        mfcClientType:
+          default: ''
+          type: string
+        mobileType:
+          default: ''
+          type: string
+        residentialAddressCountry:
+          default: ''
+          type: string
+        wasSouthAfricanCitizen:
+          default: 'No'
+          type: string
+      type: object
+    RelativeDetails:
+      properties:
+        relativeAddressCity:
+          default: ''
+          type: string
+        relativeAddressLine1:
+          default: ''
+          type: string
+        relativeAddressLine2:
+          default: ''
+          type: string
+        relativeAddressPostalCode:
+          default: ''
+          type: string
+        relativeAddressSuburb:
+          default: ''
+          type: string
+        relativeCellphone:
+          default: ''
+          type: string
+        relativeFirstNames:
+          default: ''
+          type: string
+        relativePhoneNumber:
+          default: ''
+          type: string
+        relativePreferredContactMethod:
+          default: ''
+          type: string
+        relativeRelation:
+          default: ''
+          type: string
+        relativeSurname:
+          default: ''
+          type: string
+        relativeWorkNumber:
+          default: ''
+          type: string
+      type: object
+    ResidentialDetails:
+      properties:
+        bondLenders:
+          default: ''
+          type: string
+        customerPeriodAtCurrentAddressMonths:
+          default: 0
+          type: integer
+        customerPeriodAtCurrentAddressYears:
+          default: 0
+          type: integer
+        customerPeriodAtPreviousAddressMonths:
+          default: 0
+          type: integer
+        customerPeriodAtPreviousAddressYears:
+          default: 0
+          type: integer
+        customerPostalAddressCity:
+          default: ''
+          type: string
+        customerPostalAddressLine1:
+          default: ''
+          type: string
+        customerPostalAddressPostalCode:
+          default: ''
+          type: string
+        customerPostalAddressSuburb:
+          default: ''
+          type: string
+        customerResidentialAddressCity:
+          default: ''
+          type: string
+        customerResidentialAddressLine1:
+          default: ''
+          type: string
+        customerResidentialAddressLine2:
+          default: ''
+          type: string
+        customerResidentialAddressPostalCode:
+          default: ''
+          type: string
+        customerResidentialAddressSuburb:
+          default: ''
+          type: string
+        facilityValue:
+          default: 0.0
+          type: number
+        jointBondPercentage:
+          default: ''
+          type: string
+        jointHomeloanIndicator:
+          default: 'No'
+          type: string
+        outstandingBondBalance:
+          default: 0.0
+          type: number
+        ownerTenantLodger:
+          default: ''
+          type: string
+        propertyCurrentValue:
+          default: 0.0
+          type: number
+        residentialOwner:
+          default: ''
+          type: string
+        sameAsRes:
+          default: ''
+          type: string
+      type: object
+    SataxiInsurance:
+      properties:
+        creditLifeDisplayNote:
+          default: 'No'
+          type: string
+        insuranceAmount:
+          default: 0.0
+          type: number
+        insuranceBroker:
+          default: ''
+          type: string
+        insuranceBrokerCode:
+          default: ''
+          type: string
+        supplier:
+          default: ''
+          type: string
+      type: object
+    SataxiRoute:
+      properties:
+        area:
+          default: ''
+          type: string
+        averageNumberOfPassengersPerTrip:
+          default: 0.0
+          type: number
+        dayWorkedPerMonth:
+          default: 0
+          type: integer
+        driverWagePerMonth:
+          default: 0.0
+          type: number
+        farePerPassenger:
+          default: 0.0
+          type: number
+        kmPerTrip:
+          default: 0.0
+          type: number
+        monIncNoOfSeats:
+          default: 0
+          type: integer
+        noOfTripsPerDay:
+          default: 0
+          type: integer
+        routeFromTo:
+          default: ''
+          type: string
+        taxiAssociation:
+          default: ''
+          type: string
+        taxiAssociationProvince:
+          default: ''
+          type: string
+      type: object
+    SettlementRequest:
+      properties:
+        caseNumber:
+          type: string
+        continueCartrack:
+          type: boolean
+        customerEmail:
+          default: null
+          nullable: true
+          type: string
+        customerID:
+          default: null
+          nullable: true
+          type: string
+        dealNumber:
+          type: string
+        settlementType:
+          description: settlement_type
+          enum:
+          - EARLY_SETTLEMENT
+          - DEAL_TAKEOVER_GENERIC
+          - DEAL_TAKEOVER_DECEASED
+          - INSURANCE_CLAIM
+          - STATEMENT
+          type: string
+        timeout:
+          default: null
+          nullable: true
+          type: integer
+      required:
+      - caseNumber
+      - continueCartrack
+      - dealNumber
+      - settlementType
+      type: object
+    SettlementResponse:
+      properties:
+        fileName:
+          default: null
+          nullable: true
+          type: string
+        guid:
+          default: ''
+          nullable: true
+          type: string
+        message:
+          default: null
+          nullable: true
+          type: string
+        path:
+          default: null
+          nullable: true
+          type: string
+        payload:
+          default: ''
+          nullable: true
+          type: string
+      type: object
+    SignioLoanDetailsRequest:
+      properties:
+        appDetails:
+          allOf:
+          - $ref: '#/components/schemas/AppDetails'
+          default: null
+          nullable: true
+        applicantExpenses:
+          allOf:
+          - $ref: '#/components/schemas/ApplicantExpenses'
+          default: null
+          nullable: true
+        applicantIncome:
+          allOf:
+          - $ref: '#/components/schemas/ApplicantIncome'
+          default: null
+          nullable: true
+        bankStatementConsent:
+          allOf:
+          - $ref: '#/components/schemas/BankStatementConsent'
+          default: null
+          nullable: true
+        bankingDetails:
+          allOf:
+          - $ref: '#/components/schemas/BankingDetails'
+          default: null
+          nullable: true
+        beeActStatus:
+          allOf:
+          - $ref: '#/components/schemas/BeeActStatus'
+          default: null
+          nullable: true
+        campaign:
+          description: campaign
+          enum:
+          - ZAKA
+          - TRADE_UP
+          type: string
+        caseNumber:
+          type: integer
+        eApplication:
+          allOf:
+          - $ref: '#/components/schemas/Application'
+          default: null
+          nullable: true
+        employerDetails:
+          allOf:
+          - $ref: '#/components/schemas/EmployerDetails'
+          default: null
+          nullable: true
+        financeDetails:
+          allOf:
+          - $ref: '#/components/schemas/FinanceDetails'
+          default: null
+          nullable: true
+        liabilityDetails:
+          allOf:
+          - $ref: '#/components/schemas/LiabilityDetails'
+          default: null
+          nullable: true
+        passportDetails:
+          allOf:
+          - $ref: '#/components/schemas/PassportDetails'
+          default: null
+          nullable: true
+        paymentHistory:
+          allOf:
+          - $ref: '#/components/schemas/PaymentHistory'
+          default: null
+          nullable: true
+        personalDetails:
+          allOf:
+          - $ref: '#/components/schemas/PersonalDetails'
+          default: null
+          nullable: true
+        relativeDetails:
+          allOf:
+          - $ref: '#/components/schemas/RelativeDetails'
+          default: null
+          nullable: true
+        residentialAddress:
+          allOf:
+          - $ref: '#/components/schemas/ResidentialDetails'
+          default: null
+          nullable: true
+        saTaxiInsurance:
+          allOf:
+          - $ref: '#/components/schemas/SataxiInsurance'
+          default: null
+          nullable: true
+        saTaxiRoute:
+          allOf:
+          - $ref: '#/components/schemas/SataxiRoute'
+          default: null
+          nullable: true
+        sourceOfFunds:
+          allOf:
+          - $ref: '#/components/schemas/SourceOfFunds'
+          default: null
+          nullable: true
+        spouseDetails:
+          allOf:
+          - $ref: '#/components/schemas/SpouseDetails'
+          default: null
+          nullable: true
+        statement:
+          allOf:
+          - $ref: '#/components/schemas/Statement'
+          default: null
+          nullable: true
+        vehicleDetails:
+          allOf:
+          - $ref: '#/components/schemas/VehicleDetails'
+          default: null
+          nullable: true
+      required:
+      - campaign
+      - caseNumber
+      type: object
+    SourceOfFunds:
+      properties:
+        sourceOfFundsAllowance:
+          default: 'No'
+          type: string
+        sourceOfFundsBEE:
+          default: 'No'
+          type: string
+        sourceOfFundsBEEAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsBonus:
+          default: 'No'
+          type: string
+        sourceOfFundsBonusAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsCommissionsEarned:
+          default: 'No'
+          type: string
+        sourceOfFundsCommissionsEarnedAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsCourtOrder:
+          default: 'No'
+          type: string
+        sourceOfFundsCourtOrderAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsDividends:
+          default: 'No'
+          type: string
+        sourceOfFundsDividendsAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsDonations:
+          default: 'No'
+          type: string
+        sourceOfFundsDonationsAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsInheritance:
+          default: 'No'
+          type: string
+        sourceOfFundsInheritanceAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsInsuranceClaim:
+          default: 'No'
+          type: string
+        sourceOfFundsInsuranceClaimAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsInterest:
+          default: 'No'
+          type: string
+        sourceOfFundsInterestAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsInvestmentIncome:
+          default: 'No'
+          type: string
+        sourceOfFundsInvestmentIncomeAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsMaintenance:
+          default: 'No'
+          type: string
+        sourceOfFundsMaintenanceAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsPension:
+          default: 'No'
+          type: string
+        sourceOfFundsPensionAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsProceedsFromOwnBusiness:
+          default: 'No'
+          type: string
+        sourceOfFundsRentals:
+          default: 'No'
+          type: string
+        sourceOfFundsRetirementAnnuity:
+          default: 'No'
+          type: string
+        sourceOfFundsRetirementAnnuityAmount:
+          default: 0.0
+          type: number
+        sourceOfFundsSalary:
+          default: 'No'
+          type: string
+        sourceOfFundsSocialBenefits:
+          default: 'No'
+          type: string
+        sourceOfFundsSocialGrant:
+          default: 'No'
+          type: string
+        sourceOfFundsWinnings:
+          default: 'No'
+          type: string
+        sourceOfFundsWinningsAmount:
+          default: 0.0
+          type: number
+      type: object
+    SpouseDetails:
+      properties:
+        spouseDateOfBirth:
+          default: ''
+          type: string
+        spouseFirstNames:
+          default: ''
+          type: string
+        spouseIdNo:
+          default: ''
+          type: string
+        spouseIdType:
+          default: ''
+          type: string
+        spouseMiddleName:
+          default: ''
+          type: string
+        spousePhoneNumber:
+          default: ''
+          type: string
+        spouseSurname:
+          default: ''
+          type: string
+      type: object
+    Statement:
+      properties:
+        customerAlternateEmailAddress:
+          default: ''
+          type: string
+        customerPreferredDeliveryMethod:
+          default: ''
+          type: string
+        customerPreferredEmailAddress:
+          default: ''
+          type: string
+        customerStatementDeliveryMethod:
+          default: ''
+          type: string
+      type: object
+    StatementRequest:
+      properties:
+        accountNumber:
+          type: string
+        caseNumber:
+          type: string
+        customerEmail:
+          default: null
+          nullable: true
+          type: string
+        customerID:
+          default: null
+          nullable: true
+          type: string
+        startDate:
+          format: date-time
+          type: string
+        timeout:
+          default: null
+          nullable: true
+          type: integer
+      required:
+      - accountNumber
+      - caseNumber
+      - startDate
+      type: object
+    StatementResponse:
+      properties:
+        fileName:
+          default: null
+          nullable: true
+          type: string
+        guid:
+          default: ''
+          nullable: true
+          type: string
+        message:
+          default: null
+          nullable: true
+          type: string
+        path:
+          default: null
+          nullable: true
+          type: string
+        payload:
+          default: ''
+          nullable: true
+          type: string
+      type: object
+    TransactionHistoryResponse:
+      properties:
+        accountNumber:
+          default: null
+          nullable: true
+          type: string
+        arrearsBalance:
+          default: null
+          nullable: true
+          type: number
+        capitalBalance:
+          default: null
+          nullable: true
+          type: number
+        customerAccountType:
+          default: null
+          nullable: true
+          type: string
+        effectiveDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        narrative:
+          default: null
+          nullable: true
+          type: string
+        postDate:
+          default: null
+          format: date-time
+          nullable: true
+          type: string
+        structureName:
+          default: null
+          nullable: true
+          type: string
+        totalBalance:
+          default: null
+          nullable: true
+          type: number
+        transactionAmount:
+          default: null
+          nullable: true
+          type: number
+        transactionType:
+          default: null
+          nullable: true
+          type: string
+      type: object
+    TransactionHistoryResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/TransactionHistoryResponse'
+          type: array
+      type: object
+    VGDetailsLoanGomoResponse:
+      properties:
+        accountHolder:
+          nullable: true
+          type: integer
+        accountNumber:
+          nullable: true
+          type: string
+        accountStatus:
+          nullable: true
+          type: string
+        arrearsAccruedInt:
+          nullable: true
+          type: number
+        bankAccountNumber:
+          nullable: true
+          type: string
+        bankAccountType:
+          nullable: true
+          type: string
+        bankName:
+          nullable: true
+          type: string
+        capital:
+          nullable: true
+          type: number
+        chassisNumber:
+          nullable: true
+          type: string
+        dealExpiryDate:
+          format: date-time
+          nullable: true
+          type: string
+        dealExpiryDateWithArrears:
+          format: date-time
+          nullable: true
+          type: string
+        easyPay:
+          nullable: true
+          type: string
+        engineNumber:
+          nullable: true
+          type: string
+        firstInstalmentDate:
+          format: date-time
+          nullable: true
+          type: string
+        initialTerm:
+          nullable: true
+          type: integer
+        installmentsRemaining:
+          nullable: true
+          type: integer
+        instalmentAmount:
+          nullable: true
+          type: number
+        instalmentDay:
+          nullable: true
+          type: integer
+        interestRate:
+          nullable: true
+          type: string
+        legalFeeBalance:
+          nullable: true
+          type: number
+        loanAccruedInt:
+          nullable: true
+          type: number
+        loanStartDate:
+          format: date-time
+          nullable: true
+          type: string
+        mmCode:
+          nullable: true
+          type: string
+        monthsInArrears:
+          nullable: true
+          type: number
+        nextInstalmentAmount:
+          nullable: true
+          type: number
+        outstandingBalance:
+          nullable: true
+          type: number
+        paymentMethod:
+          nullable: true
+          type: string
+        product:
+          nullable: true
+          type: string
+        registrationNumber:
+          nullable: true
+          type: string
+        secondaryStatus:
+          nullable: true
+          type: string
+        settlementDate:
+          format: date-time
+          nullable: true
+          type: string
+        structureCode:
+          nullable: true
+          type: string
+        supplierName:
+          nullable: true
+          type: string
+        totalDueCS:
+          nullable: true
+          type: number
+        totalReceivable:
+          nullable: true
+          type: number
+        vehicleDescription:
+          nullable: true
+          type: string
+        yearOfManufacture:
+          nullable: true
+          type: integer
+      required:
+      - accountHolder
+      - accountNumber
+      - accountStatus
+      - arrearsAccruedInt
+      - bankAccountNumber
+      - bankAccountType
+      - bankName
+      - capital
+      - chassisNumber
+      - dealExpiryDate
+      - dealExpiryDateWithArrears
+      - easyPay
+      - engineNumber
+      - firstInstalmentDate
+      - initialTerm
+      - installmentsRemaining
+      - instalmentAmount
+      - instalmentDay
+      - interestRate
+      - legalFeeBalance
+      - loanAccruedInt
+      - loanStartDate
+      - mmCode
+      - monthsInArrears
+      - nextInstalmentAmount
+      - outstandingBalance
+      - paymentMethod
+      - product
+      - registrationNumber
+      - secondaryStatus
+      - settlementDate
+      - structureCode
+      - supplierName
+      - totalDueCS
+      - totalReceivable
+      - vehicleDescription
+      - yearOfManufacture
+      type: object
+    VGDetailsLoanGomoResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/VGDetailsLoanGomoResponse'
+          type: array
+      type: object
+    VGDetailsLoanInstallmentGomoResponse:
+      properties:
+        accountNumber:
+          type: string
+        description:
+          type: string
+        instalmentAmount:
+          type: number
+        valueDate:
+          format: date-time
+          type: string
+      required:
+      - accountNumber
+      - description
+      - instalmentAmount
+      - valueDate
+      type: object
+    VGDetailsLoanInstallmentGomoResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/VGDetailsLoanInstallmentGomoResponse'
+          type: array
+      type: object
+    VGGomoGetStatementDetailsResponse:
+      properties:
+        accountNumber:
+          nullable: true
+          type: string
+        arrearsBalance:
+          nullable: true
+          type: number
+        capitalBalance:
+          nullable: true
+          type: number
+        creditAmount:
+          nullable: true
+          type: number
+        customerAccountType:
+          nullable: true
+          type: string
+        debitAmount:
+          nullable: true
+          type: number
+        effectiveDate:
+          format: date-time
+          nullable: true
+          type: string
+        idNumber:
+          nullable: true
+          type: string
+        narrative:
+          nullable: true
+          type: string
+        postDate:
+          format: date-time
+          nullable: true
+          type: string
+        rowNo:
+          nullable: true
+          type: integer
+        simplifiedDescription:
+          nullable: true
+          type: string
+        totalBalance:
+          nullable: true
+          type: number
+        transactionType:
+          nullable: true
+          type: string
+      required:
+      - accountNumber
+      - arrearsBalance
+      - capitalBalance
+      - creditAmount
+      - customerAccountType
+      - debitAmount
+      - effectiveDate
+      - idNumber
+      - narrative
+      - postDate
+      - rowNo
+      - simplifiedDescription
+      - totalBalance
+      - transactionType
+      type: object
+    VGGomoGetStatementDetailsResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/VGGomoGetStatementDetailsResponse'
+          type: array
+      type: object
+    VGValidationLoanGomoResponse:
+      properties:
+        accountNumber:
+          nullable: true
+          type: string
+        accountStatus:
+          nullable: true
+          type: string
+        bankAccountNumber:
+          nullable: true
+          type: string
+        bankAccountType:
+          nullable: true
+          type: string
+        bankName:
+          nullable: true
+          type: string
+        customerName:
+          nullable: true
+          type: string
+        emailAddress:
+          nullable: true
+          type: string
+        idNo:
+          nullable: true
+          type: string
+        instalmentDay:
+          nullable: true
+          type: integer
+        loanStartDate:
+          format: date-time
+          nullable: true
+          type: string
+        mobile:
+          nullable: true
+          type: string
+        nextInstalmentDate:
+          format: date-time
+          nullable: true
+          type: string
+        paymentType:
+          nullable: true
+          type: string
+        physicalAddress:
+          nullable: true
+          type: string
+        postalAddress:
+          nullable: true
+          type: string
+        structureCode:
+          nullable: true
+          type: string
+        totalDueCS:
+          nullable: true
+          type: number
+      required:
+      - accountNumber
+      - accountStatus
+      - bankAccountNumber
+      - bankAccountType
+      - bankName
+      - customerName
+      - emailAddress
+      - idNo
+      - instalmentDay
+      - loanStartDate
+      - mobile
+      - nextInstalmentDate
+      - paymentType
+      - physicalAddress
+      - postalAddress
+      - structureCode
+      - totalDueCS
+      type: object
+    VGValidationLoanGomoResponse_list:
+      properties:
+        data:
+          items:
+            $ref: '#/components/schemas/VGValidationLoanGomoResponse'
+          type: array
+      type: object
+    VehicleDetails:
+      properties:
+        articleColour:
+          default: ''
+          type: string
+        articleCondition:
+          default: ''
+          type: string
+        articleType:
+          default: Motor Vehicle
+          type: string
+        articleUse:
+          default: ''
+          type: string
+        chassisNo:
+          default: ''
+          type: string
+        engineNumber:
+          default: ''
+          type: string
+        isFinanceTrackUnit:
+          default: 'No'
+          type: string
+        kilometerCategory:
+          default: ''
+          type: string
+        kilometerReading:
+          default: 0.0
+          type: number
+        make:
+          default: ''
+          type: string
+        mmCode:
+          default: ''
+          type: string
+        purchasePriceIncludingVat:
+          default: 0.0
+          type: number
+        registrationNumber:
+          default: ''
+          type: string
+        regtrackIndicatorTag:
+          default: 'No'
+          type: string
+        retailValue:
+          default: 0.0
+          type: number
+        serialNumber:
+          default: ''
+          type: string
+        stockNumber:
+          default: ''
+          type: string
+        vehicleDescription:
+          default: ''
+          type: string
+        vehicleEngineSize:
+          default: 0
+          type: integer
+        vehicleNumberOfSeats:
+          default: 0
+          type: integer
+        vehicleType:
+          default: New/Repossessed
+          type: string
+        yearOfFirstRegistration:
+          default: 0
+          type: integer
+      type: object
+    ZakaLeadDetails:
+      properties:
+        AccountStatus:
+          type: string
+        AssetDescription:
+          type: string
+        Campaign:
+          type: string
+        ChassisNumber:
+          default: null
+          nullable: true
+          type: string
+        ContactDetails:
+          type: string
+        CreatedDate:
+          format: date-time
+          type: string
+        DateAddedToLMS:
+          format: date-time
+          type: string
+        Make:
+          type: string
+        MakeDesc:
+          type: string
+        Model:
+          type: string
+        Province:
+          type: string
+        SeatNumber:
+          type: string
+        SettledDealNumber:
+          type: string
+        StatusColumn:
+          type: integer
+        TripsPerDay:
+          type: integer
+        YearOfManufature:
+          type: integer
+        cash_payout:
+          type: number
+        customerFirstName:
+          type: string
+        customerSurname:
+          type: string
+        engineNumber:
+          type: string
+        insuranceAmount:
+          type: number
+        insuranceBroker:
+          type: string
+        kmPerTrip:
+          type: number
+        name:
+          type: string
+        outstanding_balance:
+          type: number
+        residentialDetails:
+          type: string
+        routeFromTo:
+          type: string
+        settlement_amount:
+          type: number
+        supplier:
+          type: string
+        taxiAssociation:
+          type: string
+        typeOfSale:
+          type: string
+      required:
+      - AccountStatus
+      - AssetDescription
+      - Campaign
+      - ContactDetails
+      - CreatedDate
+      - DateAddedToLMS
+      - Make
+      - MakeDesc
+      - Model
+      - Province
+      - SeatNumber
+      - SettledDealNumber
+      - StatusColumn
+      - TripsPerDay
+      - YearOfManufature
+      - cash_payout
+      - customerFirstName
+      - customerSurname
+      - engineNumber
+      - insuranceAmount
+      - insuranceBroker
+      - kmPerTrip
+      - name
+      - outstanding_balance
+      - residentialDetails
+      - routeFromTo
+      - settlement_amount
+      - supplier
+      - taxiAssociation
+      - typeOfSale
+      type: object
+  securitySchemes:
+    OAuth2:
+      description: Identity Server OAuth2 implicit authentication
+      flows:
+        implicit:
+          authorizationUrl: http://localhost:5001/connect/authorize
+          scopes:
+            bbd.vanguard.services.security: Bbd.Vanguard.Services.Security description
+            gomo.fin: Gomo.Fin description
+            sat.fin: Sat.Fin description
+      type: oauth2
+info:
+  title: Finance Service
+  version: '1.0'
+openapi: 3.0.0
+paths:
+  /acquire/acquire_notice_settlement/:
+    post:
+      description: Acquire quote generated by Sataxi's Acquire system
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/NoticeSettlementRequest'
+        description: Notice Date body
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/NoticeSettlementResponse'
+          description: successful description
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Requested data does not exist.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure.
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Acquire
+  /acquire/acquire_settlement/:
+    post:
+      description: Acquire quote generated by Sataxi's Acquire system
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SettlementRequest'
+        description: Quote body
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SettlementResponse'
+          description: successful description
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Requested data does not exist.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure.
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Acquire
+  /acquire/acquire_statement/:
+    post:
+      description: Acquire statement generated by Sataxi's Acquire system
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/StatementRequest'
+        description: Statement body
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/StatementResponse'
+          description: successful description
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Requested data does not exist.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure.
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Acquire
+  /acquire/insurance_claim/:
+    post:
+      description: Acquire insurance claim generated by Sataxi's Acquire system
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/InsuranceClaimRequest'
+        description: Claim body
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InsuranceClaimResponse'
+          description: successful description
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Requested data does not exist.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure.
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Acquire
+  /api/: {}
+  /api/def/:
+    get:
+      description: Get OpenAPi specification for this endpoint
+      tags:
+      - ServerUtils
+  /api/docs/: {}
+  /api/docs/rapiddoc/:
+    get:
+      description: Get RapidDoc UI page
+      tags:
+      - ServerUtils
+  /api/docs/rapidoc/:
+    get:
+      description: Get RapidDoc UI page
+      tags:
+      - ServerUtils
+  /api/docs/redoc/:
+    get:
+      description: Get ReDoc UI page
+      tags:
+      - ServerUtils
+  /api/docs/swagger/:
+    get:
+      description: Get Swagger UI page
+      tags:
+      - ServerUtils
+  /api/docs/swagger/redirect/:
+    get:
+      description: Get Swagger UI redirect page
+      tags:
+      - ServerUtils
+  /client/fetch_campaign_details/:
+    get:
+      description: Get Campaign details
+      parameters:
+      - allowEmptyValue: false
+        description: The Account Number
+        in: query
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CampaignDetailsResponse_list'
+          description: Accounts
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Hive
+  /client/fetch_collectsmart_details/:
+    get:
+      description: Get Collect Smart Client Details
+      parameters:
+      - allowEmptyValue: false
+        description: The Account Number
+        in: query
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/CollectSmartClientDetailsResponse'
+          description: Account Details
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Hive
+  /client/fetch_ptp_details/:
+    get:
+      description: Get PTP details
+      parameters:
+      - allowEmptyValue: false
+        description: The Account Number
+        in: query
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PTPDetailsResponse_list'
+          description: Accounts
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Hive
+  /client/fetch_transaction_history/:
+    get:
+      description: Get Transaction history
+      parameters:
+      - allowEmptyValue: false
+        description: The Account Number
+        in: query
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TransactionHistoryResponse_list'
+          description: Account Details
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Hive
+  /documents/available_documents/:
+    get:
+      description: GET Available Documents for client
+      parameters:
+      - allowEmptyValue: false
+        description: Account Number of Client
+        in: query
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentsResponse'
+          description: successful description
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure.
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Documents
+  /gomo/documents/{account_number}/available_documents/:
+    get:
+      description: GET Available Documents for GoMo client
+      parameters:
+      - allowEmptyValue: false
+        description: Account Number of Client
+        in: path
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DocumentsResponse'
+          description: successful description
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure.
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - gomo.fin
+      tags:
+      - Gomo
+  /gomo/get_statement_details/{account_number}:
+    get:
+      description: Endpoint for VG Gomo Get Statement Details
+      parameters:
+      - allowEmptyValue: false
+        description: The Account Number
+        in: path
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VGGomoGetStatementDetailsResponse_list'
+          description: Accounts
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - gomo.fin
+      tags:
+      - Gomo
+  /gomo/loan_details/{account_number}:
+    get:
+      description: Endpoint for VG Details Loan Gomo Data
+      parameters:
+      - allowEmptyValue: false
+        description: The Account Number
+        in: path
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VGDetailsLoanGomoResponse_list'
+          description: Accounts
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - gomo.fin
+      tags:
+      - Gomo
+  /gomo/loan_installment_details/{account_number}:
+    get:
+      description: Endpoint for VG Details Loan Installments Gomo Data
+      parameters:
+      - allowEmptyValue: true
+        description: The Account Number
+        in: path
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VGDetailsLoanInstallmentGomoResponse_list'
+          description: Installments
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - gomo.fin
+      tags:
+      - Gomo
+  /gomo/loan_validation/:
+    get:
+      description: Endpoint for VG Validation Loan Gomo Data
+      parameters:
+      - allowEmptyValue: true
+        description: The ID Number
+        in: query
+        name: id_no
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: true
+        description: The Account Number
+        in: query
+        name: account_number
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/VGValidationLoanGomoResponse_list'
+          description: Accounts
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      tags:
+      - Gomo
+  /health_check/:
+    get:
+      description: Checks if service is healthy.
+      tags:
+      - HealthCheck
+    head:
+      description: Checks if service is healthy.
+      tags:
+      - HealthCheck
+  /hive/banking_details/:
+    get:
+      description: Get Sataxi Banking Details
+      parameters:
+      - allowEmptyValue: false
+        description: Bank Ref
+        in: query
+        name: bank_ref
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/BankingDetailsLookupResponse_list'
+          description: Banking Details
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Hive
+  /hive/instalment_breakdown/:
+    get:
+      description: Accepts a customer Account Number and returns instalment breakdown
+        details
+      parameters:
+      - allowEmptyValue: false
+        description: The Account Number
+        in: query
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/InstalmentBreakdownLookUpResponse_list'
+          description: Returns Instalment Breakdown Details
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Hive
+  /hive/loan_account/:
+    get:
+      description: Get Client Account with ID or Account Number
+      parameters:
+      - allowEmptyValue: true
+        description: The IDNumber
+        in: query
+        name: id_number
+        required: false
+        schema:
+          type: string
+      - allowEmptyValue: true
+        description: The Account Number
+        in: query
+        name: account_number
+        required: false
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoanAccountLookupResponse_list'
+          description: Accounts
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Hive
+  /hive/loan_details/:
+    get:
+      description: Get Client Account Details
+      parameters:
+      - allowEmptyValue: false
+        description: The Account Number
+        in: query
+        name: account_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoanDetailsLookupResponse_list'
+          description: Account Details
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Hive
+  /lookup/agreement_by_description/:
+    get:
+      description: Get Agreement by Agreement
+      parameters:
+      - allowEmptyValue: false
+        description: Agreement
+        in: query
+        name: agreement
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_AgreementSelectByDescription'
+          description: 'Agreement '
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/agreements/:
+    get:
+      description: Get All Agreements
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_AgreementSelectAll_list'
+          description: 'Agreement '
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/area_by_name/:
+    get:
+      description: Get Area
+      parameters:
+      - allowEmptyValue: false
+        description: Area Name
+        in: query
+        name: area_name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_AreaSelectByAreaName'
+          description: Area
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/areas/:
+    get:
+      description: 'Get All Areas '
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_AreaSelectAll_list'
+          description: Areas
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/article_type_by_type/:
+    get:
+      description: Get Article Type
+      parameters:
+      - allowEmptyValue: false
+        description: Article Type
+        in: query
+        name: article_type
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_ArticleTypeSelectByType'
+          description: Article Type
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/article_types/:
+    get:
+      description: Get All Article Types
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_ArticleTypeSelectAll_list'
+          description: Article Types
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/bank_by_name/:
+    get:
+      description: Get Bank by Bank Name
+      parameters:
+      - allowEmptyValue: false
+        description: Bank
+        in: query
+        name: bank_name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_BankSelectByBankName'
+          description: Bank Name
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/banks/:
+    get:
+      description: Get All Banks
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_BankSelectAll_list'
+          description: Banks
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/client_type_by_type/:
+    get:
+      description: Get Client  Type by Client Type
+      parameters:
+      - allowEmptyValue: false
+        description: Client Type
+        in: query
+        name: client_type
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_ClientTypeSelectByType'
+          description: Client  Type Type
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/client_types/:
+    get:
+      description: Get All ClientTypes
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_ClientTypeSelectAll_list'
+          description: Client Types
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/countries/:
+    get:
+      description: Get All Countries
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_CountrySelectAll_list'
+          description: Countries
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/country_by_name/:
+    get:
+      description: Get Country
+      parameters:
+      - allowEmptyValue: false
+        description: Country Name
+        in: query
+        name: country_name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_CountrySelectByCountryName'
+          description: Country
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/dealer_code_by_code/:
+    get:
+      description: Get Dealer Code by Code
+      parameters:
+      - allowEmptyValue: false
+        description: Dealer Code
+        in: query
+        name: dealer_code
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_DealerCodeSelectByCode'
+          description: Dealer Code
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/dealer_codes/:
+    get:
+      description: Get All Dealer Codes
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_DealerCodeSelectAll_list'
+          description: Dealer Codes
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/employer_industry_type_by_type/:
+    get:
+      description: Get Employer Industry Type
+      parameters:
+      - allowEmptyValue: false
+        description: Employer Industry Type
+        in: query
+        name: industry_type
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_EmployerIndustryTypeSelectByType'
+          description: Employer Industry Type
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/employer_industry_types/:
+    get:
+      description: 'Get All Employer Industry Types '
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_EmployerIndustryTypeSelectAll_list'
+          description: Employer Industry Types
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/insurance_broker_by_name/:
+    get:
+      description: Get Insurance Broker
+      parameters:
+      - allowEmptyValue: false
+        description: Insurance Broker Name
+        in: query
+        name: broker_name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_InsuranceBrokerSelectByBrokerName'
+          description: Insurance Broker
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Requested data does not exist.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/insurance_brokers/:
+    get:
+      description: Get All Insurance Brokers
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_InsuranceBrokerSelectAll_list'
+          description: Insurance Brokers
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Requested data does not exist.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/insurance_companies/:
+    get:
+      description: 'Get All Insurance Companies '
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_InsuranceCompanySelectAll_list'
+          description: Insurance Companies
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Requested data does not exist.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/insurance_company_by_name/:
+    get:
+      description: Get Insurance Company
+      parameters:
+      - allowEmptyValue: false
+        description: Insurance Company Name
+        in: query
+        name: company_name
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_InsuranceCompanySelectByCompanyName'
+          description: Insurance Company
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Requested data does not exist.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/language_by_description/:
+    get:
+      description: Get Language by Language
+      parameters:
+      - allowEmptyValue: false
+        description: Description
+        in: query
+        name: description
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_LanguageSelectByDescription'
+          description: Language
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Requested data does not exist.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/languages/:
+    get:
+      description: Get All Languages
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_LanguageSelectAll_list'
+          description: Languages
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '404':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Requested data does not exist.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/occupation_by_occupation/:
+    get:
+      description: Get Occupation by Occupation
+      parameters:
+      - allowEmptyValue: false
+        description: Occupation
+        in: query
+        name: occupation
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_OccupationSelectByOccupation'
+          description: Occupation
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/occupations/:
+    get:
+      description: Get All Occupations
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_OccupationSelectAll_list'
+          description: Occupations
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/relation_by_relative/:
+    get:
+      description: Get Relation by Relative
+      parameters:
+      - allowEmptyValue: false
+        description: Relative
+        in: query
+        name: relative
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_RelationSelectByRelative'
+          description: Relation
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/relations/:
+    get:
+      description: Get All Relations
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_RelationSelectAll_list'
+          description: Relations
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/type_of_sale_by_type/:
+    get:
+      description: Get TypeOfSale by Type
+      parameters:
+      - allowEmptyValue: false
+        description: Type
+        in: query
+        name: type
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_TypeOfSaleSelectByType'
+          description: TypeOfSale
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /lookup/type_of_sales/:
+    get:
+      description: Get All Type Of Sales
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DB_TypeOfSaleSelectAll_list'
+          description: Type Of Sales
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Generic Failure
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Lookup
+  /metrics/:
+    get:
+      responses:
+        '200':
+          description: Successful re-assignment
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure
+      tags:
+      - ServerUtils
+  /signio/loan_details/:
+    get:
+      description: GET the Signio loan details payload
+      parameters:
+      - allowEmptyValue: false
+        description: ID Number of Customer
+        in: query
+        name: id_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SignioLoanDetailsRequest'
+          description: successful description
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure.
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Signio
+  /signio/save_loan_application/:
+    post:
+      description: Insert the Signio loan details
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignioLoanDetailsRequest'
+        description: Signio body
+      responses:
+        '200':
+          description: successful description
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure.
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Signio
+  /signio/submit_loan_application/:
+    post:
+      description: Insert the Signio loan details
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SignioLoanDetailsRequest'
+        description: Signio body
+      responses:
+        '200':
+          description: successful description
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure.
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - Signio
+  /zaka/lead_details/:
+    get:
+      description: GET the Zaka Lead Infomration
+      parameters:
+      - allowEmptyValue: false
+        description: ID Number of Customer
+        in: query
+        name: id_number
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ZakaLeadDetails'
+          description: successful description
+        '400':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: Request failure.
+        '500':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/FailedResponse'
+          description: GenericFailure.
+      security:
+      - OAuth2:
+        - bbd.vanguard.services.security
+        - sat.fin
+      tags:
+      - ZakaLeads
+servers:
+- description: API Server
+  url: '%s'

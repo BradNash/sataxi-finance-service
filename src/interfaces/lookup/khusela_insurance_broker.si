@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT InsuranceBrokerLookup
+SERVER finance
+SCHEMA finance
+
+TABLE InsuranceBroker
+    brokerID                    IDENTITY
+    brokerName                  CHAR(100)
+ 
+
+KEY PKEY PRIMARY brokerID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY brokerName as SelectByBrokerName
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

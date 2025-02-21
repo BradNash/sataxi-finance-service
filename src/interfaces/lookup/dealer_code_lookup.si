@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT DealerCodeLookup
+SERVER finance
+SCHEMA finance
+
+TABLE DealerCode
+    dealerCodeID                IDENTITY
+    dealerCode                        CHAR(50)
+ 
+
+KEY PKEY PRIMARY dealerCodeID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY dealerCode as SelectByCode
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

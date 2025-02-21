@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.finance.db
+OUTPUT signio_loan_application
+SERVER finance
+SCHEMA finance
+
+TABLE SignioLoanApplication
+    case_no                         INT
+    signio_application_request      XML
+    response_message                CHAR(250)     NULL
+    response_code                   INT           NULL
+    referenceNumber                 CHAR(20)      NULL
+
+KEY PKEY PRIMARY case_no
+LINK finance.SignioLoanDetails (case_no) case_no
+
+PROC INSERT
+PROC SELECTONE FOR UPDATE
+PROC UPDATE

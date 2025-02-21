@@ -1,0 +1,27 @@
+DATABASE HiveUAT
+PACKAGE sataxi.db
+OUTPUT HiveDetailsLive
+SERVER HiveUAT
+SCHEMA dbo
+
+TABLE CollectSmart_View_GetPTPDetails
+        AccountNumber   CHAR(50)
+        AgentID         INT
+        CampaignDate    DATE
+        CampaignID      INT
+        CampaignName    CHAR(60)
+        ClientID        INT
+        CurrentPayment  FLOAT
+        Frequency       CHAR(100)
+        Name            CHAR(101)
+        PTPAmount       FLOAT
+        PTPCreatedDate  DATE
+        PTPDate		DATE
+        PTPID           INT
+        PTPStatus	CHAR(50)
+        PTPType         CHAR(30)
+        UserName	CHAR(30)
+
+KEY PKEY PRIMARY AccountNumber
+PROC SELECTBY AccountNumber as SelectPTPDetails
+

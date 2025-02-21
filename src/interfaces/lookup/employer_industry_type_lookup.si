@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT EmployerIndustryTypeLookup
+SERVER finance
+SCHEMA finance
+
+TABLE EmployerIndustryType
+    industryTypeID                IDENTITY
+    type                                  CHAR(100)
+ 
+
+KEY PKEY PRIMARY industryTypeID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY type as SelectByType
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

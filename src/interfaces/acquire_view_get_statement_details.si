@@ -1,0 +1,59 @@
+DATABASE HiveUAT
+PACKAGE sataxi.db
+OUTPUT TransactionHistory
+SERVER HiveUAT
+SCHEMA dbo
+
+
+TABLE Acquire_View_GetStatementDetails
+    RowNo                   INT
+    AccountNumber           CHAR(50)
+	PostDate                DATETIME
+    EffectiveDate           DATETIME
+    TransactionType         CHAR(255)
+    Narrative               CHAR(255)
+    DebitAmount             DOUBLE
+    CreditAmount            DOUBLE
+    CustomerAccountType     CHAR(10)
+    SimplifiedDescription   CHAR(264)
+    ArrearsBalance          DOUBLE
+    CapitalBalance          DOUBLE  
+    TotalBalance            DOUBLE
+    StructureName           CHAR(255)
+    StructCode              CHAR(255)
+
+KEY PKEY PRIMARY AccountNumber
+PROC SELECTBY TransactionType AccountNumber as SelectTransactionHistoryByType
+
+
+PROC SelectTransactionHistory
+INPUT
+    AccountNumber               =
+OUTPUT
+    accountNumber               =
+    postDate                    =
+    effectiveDate               =
+    transactionType             =
+    narrative                   =
+    transactionAmount           DOUBLE
+    customerAccountType         =
+    capitalBalance              =
+    arrearsBalance              =
+    totalBalance                =
+    structureName               =
+SQLCODE
+    SELECT
+        AccountNumber as accountNumber,
+        PostDate as postDate,
+        EffectiveDate as effectiveDate,
+        TransactionType as transactionType,
+        Narrative as narrative,
+        isnull(CreditAmount,0) + isnull(DebitAmount,0) as transactionAmount,
+        CustomerAccountType as customerAccountType,
+        CapitalBalance as capitalBalance,
+        ArrearsBalance as arrearsBalance,
+        TotalBalance as totalBalance,
+        StructureName as structureName
+    FROM [Acquire_View_GetStatementDetails]
+    WHERE AccountNumber = :AccountNumber
+ENDCODE

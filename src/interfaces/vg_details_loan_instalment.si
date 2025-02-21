@@ -1,0 +1,31 @@
+DATABASE HiveUAT
+PACKAGE sataxi.db
+OUTPUT InstalmentBreakdown
+SERVER HiveUAT
+SCHEMA dbo
+
+TABLE VG_Details_LoanInstalment
+    AccountNumber       CHAR (50)
+    Description         CHAR
+    ValueDate           DATETIME
+    InstalmentAmount    FLOAT
+
+KEY PKEY PRIMARY AccountNumber
+
+PROC SelectInstalmentBreakdown
+INPUT
+    AccountNumber           =
+OUTPUT
+    AccountNumber           =
+    Description             =
+    ValueDate               =
+    InstalmentAmount        =
+SQLCODE
+    SELECT
+        AccountNumber,
+        Description,
+        ValueDate,
+        InstalmentAmount
+    FROM dbo.VG_Details_LoanInstalment
+    where AccountNumber like :AccountNumber
+ENDCODE

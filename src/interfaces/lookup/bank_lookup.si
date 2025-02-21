@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT BankLookup
+SERVER finance
+SCHEMA finance
+
+TABLE Bank
+    bankID                IDENTITY
+    bankName                  CHAR(100)
+ 
+
+KEY PKEY PRIMARY bankID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY bankName as SelectByBankName
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

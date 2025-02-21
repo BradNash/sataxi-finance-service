@@ -1,0 +1,78 @@
+version: 0.2
+env:
+  exported-variables:
+    - COMMIT_HASH
+    - IMAGE_TAG
+
+phases:
+  install:
+    runtime-versions:
+      dotnet: latest
+  pre_build:
+    commands:
+      - echo ******** Logging in to Amazon ECR... ********
+      - aws ecr get-login-password --region af-south-1 | docker login --username AWS --password-stdin $ECR_REGISTRY_URI
+
+      - echo ******** Logging in to CodeArtifact sataxi-npm repository with npm... ********
+      - aws codeartifact login --tool npm --repository sataxi-npm --domain sataxi --domain-owner 743730760644 --region eu-west-1
+
+      - echo ******** Logging in to CodeArtifact sataxi-pypi repository with twine... ********
+      - aws codeartifact login --tool twine --repository sataxi-pypi --domain sataxi --domain-owner 743730760644 --region eu-west-1
+
+      - echo Logging in to CodeArtifact sataxi-pypi repository with pip...
+      - aws codeartifact login --tool pip --repository sataxi-pypi --domain sataxi --domain-owner 743730760644 --region eu-west-1
+
+      - echo ******** Getting CodeArtifact authorization for sataxi-pypi repository... ********
+      - export CODEARTIFACT_AUTH_TOKEN=$(aws codeartifact get-authorization-token --domain sataxi --domain-owner 743730760644 --query authorizationToken --output text --region eu-west-1)
+      - export AWS_PIP_INDEX_URL="https://aws:${CODEARTIFACT_AUTH_TOKEN}@sataxi-743730760644.d.codeartifact.eu-west-1.amazonaws.com/pypi/sataxi-pypi/simple/"
+
+      - pip install twine
+      - IMAGE_TAG=$CODEBUILD_BUILD_NUMBER
+      - COMMIT_HASH=$CODEBUILD_RESOLVED_SOURCE_VERSION
+      - CURRENT_UID=$(id -u):$(id -g)
+      - SATAXI_NPM_REGISTRY=https://sataxi-743730760644.d.codeartifact.eu-west-1.amazonaws.com/npm/sataxi-npm/
+  build:
+    commands:
+      - cd ./docker
+      - sed -i '/^name:\W/d' docker-compose.yaml
+      - echo ******** Running JPortal2... ********
+      - docker-compose run --user ${CURRENT_UID} jportal2
+
+#      - echo ******** Running tox... ********
+#      - docker-compose run --user ${CURRENT_UID} tox
+
+      - echo ******** Running SwaggerGen... ********
+      - docker-compose run --user ${CURRENT_UID} swagger
+
+      - echo ******** Building sataxi/finance-batch Docker Image ********
+      - docker build -t sataxi/finance-service --build-arg AWS_PIP_INDEX_URL=${AWS_PIP_INDEX_URL} -f ./finance-service/Dockerfile ..
+
+      - echo ******** Building sataxi/zaka-leads-batch Docker Image ********
+      - docker build -t sataxi/zaka-leads-batch --build-arg AWS_PIP_INDEX_URL=${AWS_PIP_INDEX_URL} -f ./zaka-leads-batch/Dockerfile ..
+
+      - cd ../
+      - python setup.py sdist bdist_wheel --version=1.0.0.${IMAGE_TAG}
+
+      - cd ./src/angular
+      - echo ******** NPM VERSION ********
+      - npm --version
+      - npm version 1.0.0-${IMAGE_TAG}
+      - npm install
+      - npm run build
+  post_build:
+    commands:
+      - docker tag sataxi/finance-service:latest ${ECR_REGISTRY_URI}/sataxi/finance-service:latest
+      - docker push ${ECR_REGISTRY_URI}/sataxi/finance-service:latest
+      - docker tag sataxi/finance-service:latest ${ECR_REGISTRY_URI}/sataxi/finance-service:${IMAGE_TAG}
+      - docker push ${ECR_REGISTRY_URI}/sataxi/finance-service:${IMAGE_TAG}
+        
+      - docker tag sataxi/zaka-leads-batch:latest ${ECR_REGISTRY_URI}/sataxi/zaka-leads-batch:latest
+      - docker push ${ECR_REGISTRY_URI}/sataxi/zaka-leads-batch:latest
+      - docker tag sataxi/zaka-leads-batch:latest ${ECR_REGISTRY_URI}/sataxi/zaka-leads-batch:${IMAGE_TAG}
+      - docker push ${ECR_REGISTRY_URI}/sataxi/zaka-leads-batch:${IMAGE_TAG}
+
+      - cd ../../
+      - twine upload --repository codeartifact dist/*
+      - cd ./src/angular/dist/sataxi/finance-service-api
+      - npm version 1.0.0-${IMAGE_TAG}
+      - npm publish --registry ${SATAXI_NPM_REGISTRY}

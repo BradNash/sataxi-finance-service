@@ -1,0 +1,138 @@
+DATABASE HiveUAT
+PACKAGE sataxi.db
+OUTPUT zaka_leads
+SERVER HiveUAT
+SCHEMA dbo
+
+TABLE VG_Leads_ABL
+    name                CHAR(801)
+    ContactDetails      CHAR(255)
+    engineNumber        CHAR(1020)
+    ChassisNumber       CHAR(1020)
+    Model               CHAR(255)
+    Make                CHAR(255)
+    MakeDesc            CHAR(255)
+    AssetDescription    CHAR(255)
+    IDNumber            CHAR(100)
+    YearOfManufature    INT
+    SettledDealNumber   CHAR(255)
+    StatusColumn        INT         Not Null
+    CreatedDate         DATETIME
+    DateAddedToLMS      DATETIME
+    Campaign            CHAR(4)    Not Null
+    typeOfSale          CHAR(255)
+    TripsPerDay         FLOAT
+    kmPerTrip           FLOAT
+    SeatNumber          CHAR(255)
+    insuranceBroker     CHAR(500)
+    supplier            CHAR(255)
+    insuranceAmount     FLOAT
+    customerFirstName   CHAR(300)
+    customerSurname     CHAR(500)
+    routeFromTo         CHAR(-1)
+    taxiAssociation     CHAR(-1)
+    residentialDetails  CHAR(3608)
+    Province            CHAR(255)
+    AccountStatus       CHAR(255)
+    settlement_amount   FLOAT
+    outstanding_balance FLOAT
+    cash_payout         FLOAT
+    Title               CHAR(50)
+
+KEY PKEY PRIMARY IDNumber
+
+PROC SELECTONE
+PROC SELECTONE FOR UPDATE
+PROC SELECTBY IDNumber as SelectByIdNumber
+PROC SELECTBY EngineNumber as SelectByEngineNumber
+PROC SELECTBY IDNumber EngineNumber as SelectByIdNumberAndEngineNumber
+
+PROC SelectPendingLeads
+INPUT
+    StatusColumn        =
+OUTPUT
+    name                =
+    ContactDetails      =
+    engineNumber        =
+    ChassisNumber       =
+    Model               =
+    Make                =
+    MakeDesc            =
+    AssetDescription    =
+    IDNumber            =
+    YearOfManufature    =
+    SettledDealNumber   =
+    StatusColumn        =
+    CreatedDate         =
+    DateAddedToLMS      =
+    Campaign            =
+    typeOfSale          =
+    TripsPerDay         =
+    kmPerTrip           =
+    SeatNumber          =
+    insuranceBroker     =
+    supplier            =
+    insuranceAmount     =
+    customerFirstName   =
+    customerSurname     =
+    routeFromTo         =
+    taxiAssociation     =
+    residentialDetails  =
+    Province            =
+    AccountStatus       =
+    settlement_amount   =
+    outstanding_balance =
+    cash_payout         =
+    Title               =
+SQLCODE
+    SELECT TOP 200
+          RTRIM(name) as name,
+          ContactDetails,
+          engineNumber,
+          Model,
+          Make,
+          MakeDesc,
+          AssetDescription,
+          IDNumber,
+          YearOfManufature,
+          SettledDealNumber,
+          StatusColumn,
+          CreatedDate,
+          DateAddedToLMS,
+          Campaign,
+          typeOfSale,
+          TripsPerDay,
+          kmPerTrip,
+          SeatNumber,
+          insuranceBroker,
+          supplier,
+          insuranceAmount,
+          RTRIM(customerFirstName) as customerFirstName,
+          RTRIM(customerSurname) as customerSurname,
+          routeFromTo,
+          taxiAssociation,
+          residentialDetails,
+          Province,
+          AccountStatus,
+          settlement_amount,
+          outstanding_balance,
+          cash_payout,
+          Title
+    FROM dbo.VG_Leads_ABL WHERE StatusColumn = :StatusColumn
+ENDCODE
+
+// ---------------------------------------------------------------------------
+PROC UpdateZakaLead
+INPUT
+    IDNumber               =
+    engineNumber           =
+    Campaign               =
+    DateAddedToLMS         =
+SQLCODE
+    UPDATE dbo.VG_Leads_ABL
+    SET
+      StatusColumn = 1,
+      DateAddedToLMS = :DateAddedToLMS
+    WHERE IDNumber = :IDNumber and engineNumber = :engineNumber and Campaign = :Campaign
+ENDCODE
+

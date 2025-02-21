@@ -1,0 +1,15 @@
+DATABASE HiveUAT
+PACKAGE sataxi.db
+OUTPUT INstalmentBreakdown
+SERVER HiveUAT
+SCHEMA dbo
+
+TABLE   VG_View_Loan_BankDetails
+    BankName        CHAR (255)
+    BranchType      CHAR (255)
+    AccountNo       CHAR (255)
+    Expr1           CHAR (6)
+    BankReference   CHAR (50)
+
+KEY PKEY PRIMARY BankReference
+PROC SELECTBY BankReference as SelectBankingDetails

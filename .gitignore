@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+build/lib
+**/*.egg-info/
+dist
+.tox
+.eggs
+*.log
+*.coverage
+.idea
+log.name_IS_UNDEFINED
+/venv/
+/.venv/
+downloaded_jportal_templates
+/database/generated_sql/
+/src/python/sataxi/finance/db/

@@ -1,0 +1,101 @@
+containerDefinitions:
+  - name: config-loader
+    image: 761183306127.dkr.ecr.af-south-1.amazonaws.com/sataxi/config-loader:1.0.0
+    essential: false
+    mountPoints:
+      - containerPath: /config
+        sourceVolume: ConfigVolume
+        readOnly: false
+    environment:
+      - name: SSM_PARAMATER_NAME
+        value: /prod/service/finance/config
+      - name: CONFIG_FILE_NAME
+        value: config.yaml
+
+  - name: flyway-scripts
+    image: 761183306127.dkr.ecr.af-south-1.amazonaws.com/sataxi/finance-service:${IMAGE_TAG}
+    entryPoint: ["echo", "Mounting flyway scripts to volume"]
+    essential: false
+    mountPoints:
+      - containerPath: /flyway
+        sourceVolume: FlywayVolume
+        readOnly: false
+
+  - name: flyway
+    image: 761183306127.dkr.ecr.af-south-1.amazonaws.com/flyway:latest
+    command:
+      [
+        "-workingDirectory=/flyway/sql/",
+        "-configFiles=/flyway/sql/flyway.conf",
+        "migrate",
+      ]
+    essential: false
+    mountPoints:
+      - containerPath: /flyway/sql
+        sourceVolume: FlywayVolume
+        readOnly: false
+    environment:
+      - name: VANGUARD_DB_NAME
+        value: finance
+      - name: VANGUARD_MIGRATION_DIRS
+        value: scripts
+    secrets:
+      - name: VANGUARD_DB_SERVER_HOST_NAME
+        valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rds-postgres-credentials-prod-2Ng3nn:host::"
+      - name: VANGUARD_DB_USER
+        valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rds-postgres-credentials-prod-2Ng3nn:username::"
+      - name: VANGUARD_DB_PASSWORD
+        valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rds-postgres-credentials-prod-2Ng3nn:password::"
+
+    dependsOn:
+      - containerName: flyway-scripts
+        condition: START
+
+  - name: finance
+    image: 761183306127.dkr.ecr.af-south-1.amazonaws.com/sataxi/finance-service:${IMAGE_TAG}
+    portMappings:
+      - hostPort: 8080
+        containerPort: 8080
+        protocol: tcp
+    mountPoints:
+      - containerPath: /config
+        sourceVolume: ConfigVolume
+        readOnly: false
+    environment:
+      - name: OTEL_EXPORTER_OTLP_ENDPOINT
+        value: http://localhost:4317
+      - name: OTEL_RESOURCE_ATTRIBUTES
+        value: service.name=finance
+    secrets:
+      - name: VANGUARD_DB_SERVER_HOST_NAME
+        valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rds-postgres-credentials-prod-2Ng3nn:host::"
+      - name: VANGUARD_DB_USER
+        valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rds-postgres-credentials-prod-2Ng3nn:username::"
+      - name: VANGUARD_DB_PASSWORD
+        valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rds-postgres-credentials-prod-2Ng3nn:password::"
+      - name: AMQP_CONNECTIONSTRING
+        valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rabbit-mq-credentials-prod-ZR2Qft:amqp_connection_string::"
+    logMultilinePattern: ^(DEBUG|INFO|WARNING|ERROR)
+    dependsOn:
+      - containerName: config-loader
+        condition: SUCCESS
+      - containerName: flyway
+        condition: SUCCESS
+
+  - name: otel-collector
+    image: 761183306127.dkr.ecr.af-south-1.amazonaws.com/sataxi/otel-collector:1.0.0
+    portMappings:
+      - hostPort: 4317
+        containerPort: 4317
+        protocol: tcp
+    cpu: 32
+    memoryReservation: 75
+    dependsOn:
+      - containerName: finance
+        condition: START
+
+cpu: "256"
+memory: "512"
+volumes:
+  - ConfigVolume
+  - FlywayVolume

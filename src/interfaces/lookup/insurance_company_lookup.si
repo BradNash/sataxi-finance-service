@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT InsuranceCompanyLookup
+SERVER finance
+SCHEMA finance
+
+TABLE InsuranceCompany
+    companyID                IDENTITY
+    companyName              CHAR(100)
+ 
+
+KEY PKEY PRIMARY companyID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY companyName as SelectByCompanyName
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

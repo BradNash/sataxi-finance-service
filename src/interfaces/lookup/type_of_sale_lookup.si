@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT TypeOfSaleLookup
+SERVER finance
+SCHEMA finance
+
+TABLE TypeOfSale
+    typeOfSaleID                IDENTITY
+    type                        CHAR(50)
+ 
+
+KEY PKEY PRIMARY typeOfSaleID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY type as SelectByType
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

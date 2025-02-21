@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT CountryLookup
+SERVER finance
+SCHEMA finance
+
+TABLE Country
+    countryID                IDENTITY
+    countryName              CHAR(150)
+ 
+
+KEY PKEY PRIMARY countryID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY countryName as SelectByCountryName
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

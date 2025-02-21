@@ -1,0 +1,110 @@
+DATABASE Vanguard
+PACKAGE sataxi.db
+OUTPUT VGValidationLoanGomo
+SERVER Vanguard
+SCHEMA dbo
+
+TABLE VG_Validation_Loan_Gomo
+    AccountNumber       CHAR(255)
+    IDNo                CHAR(1000)
+    CustomerName        CHAR(2001)
+    Mobile              CHAR(2000)
+    PhysicalAddress     CHAR(8000)
+    PostalAddress       CHAR(8000)
+    NextInstalmentDate  DATETIME
+    InstalmentDay       INT
+    PaymentType         CHAR(5)
+    LoanStartDate       DATETIME
+    BankAccountNumber   CHAR(1000)
+    BankAccountType     CHAR(7)
+    BankName            CHAR(29)
+    EmailAddress        CHAR(100)
+KEY PKEY PRIMARY AccountNumber
+
+PROC SelectByAccountNumber
+INPUT
+    AccountNumber   CHAR
+OUTPUT
+    AccountNumber       CHAR
+    IDNo                CHAR
+    CustomerName        CHAR
+    Mobile              CHAR
+    PhysicalAddress     CHAR
+    PostalAddress       CHAR
+    NextInstalmentDate  DATETIME
+    InstalmentDay       INT
+    PaymentType         CHAR
+    LoanStartDate       DATETIME
+    BankAccountNumber   CHAR
+    BankAccountType     CHAR
+    BankName            CHAR
+    AccountStatus       CHAR
+    TotalDueCS          DOUBLE
+    EmailAddress        CHAR
+    StructureCode       CHAR
+SQLCODE
+    SELECT vl.AccountNumber,
+        vl.IDNo,
+        vl.CustomerName,
+        vl.Mobile,
+        vl.PhysicalAddress,
+        vl.PostalAddress,
+        vl.NextInstalmentDate,
+        vl.InstalmentDay,
+        vl.PaymentType,
+        vl.LoanStartDate,
+        vl.BankAccountNumber,
+        vl.BankAccountType,
+        vl.BankName,
+        dl.AccountStatus,
+        dl.TotalDueCS,
+        vl.EmailAddress,
+        dl.StructureCode
+    FROM [VG_Validation_Loan_Gomo] vl
+        LEFT OUTER JOIN [VG_Details_Loan_Gomo] dl ON vl.AccountNumber = dl.AccountNumber
+    WHERE vl.AccountNumber LIKE :AccountNumber
+ENDCODE
+
+PROC SelectByIDNumber
+INPUT
+    IDNo            CHAR
+OUTPUT
+    AccountNumber       CHAR
+    IDNo                CHAR
+    CustomerName        CHAR
+    Mobile              CHAR
+    PhysicalAddress     CHAR
+    PostalAddress       CHAR
+    NextInstalmentDate  DATETIME
+    InstalmentDay       INT
+    PaymentType         CHAR
+    LoanStartDate       DATETIME
+    BankAccountNumber   CHAR
+    BankAccountType     CHAR
+    BankName            CHAR
+    AccountStatus       CHAR
+    TotalDueCS          DOUBLE
+    EmailAddress        CHAR
+    StructureCode       CHAR
+SQLCODE
+    SELECT vl.AccountNumber,
+        vl.IDNo,
+        vl.CustomerName,
+        vl.Mobile,
+        vl.PhysicalAddress,
+        vl.PostalAddress,
+        vl.NextInstalmentDate,
+        vl.InstalmentDay,
+        vl.PaymentType,
+        vl.LoanStartDate,
+        vl.BankAccountNumber,
+        vl.BankAccountType,
+        vl.BankName,
+        dl.AccountStatus,
+        dl.TotalDueCS,
+        vl.EmailAddress,
+        dl.StructureCode
+    FROM [VG_Validation_Loan_Gomo] vl
+        LEFT OUTER JOIN [VG_Details_Loan_Gomo] dl ON vl.AccountNumber = dl.AccountNumber
+    WHERE vl.IDNo = :IDNo
+ENDCODE

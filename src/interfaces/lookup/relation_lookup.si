@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT RelationLookup
+SERVER finance
+SCHEMA finance
+
+TABLE Relation
+    relativeID                IDENTITY
+    relative                  CHAR(100)
+ 
+
+KEY PKEY PRIMARY relativeID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY relative as SelectByRelative
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

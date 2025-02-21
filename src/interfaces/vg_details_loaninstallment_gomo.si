@@ -1,0 +1,28 @@
+DATABASE Vanguard
+PACKAGE sataxi.db
+OUTPUT VGDetailsLoanInstallmentGomo
+SERVER Vanguard
+SCHEMA dbo
+
+TABLE VG_Details_LoanInstalment_Gomo
+    AccountNumber       CHAR(1000)
+    Description         CHAR(1000)
+    ValueDate           DATE
+    InstalmentAmount    DOUBLE
+KEY PKEY PRIMARY AccountNumber
+
+PROC SelectByAccountNumber
+INPUT
+    AccountNumber CHAR
+OUTPUT
+    AccountNumber       CHAR(1000)
+    Description         CHAR(1000)
+    ValueDate           DATE
+    InstalmentAmount    DOUBLE
+SQLCODE
+    SELECT AccountNumber,
+        Description,
+        ValueDate,
+        InstalmentAmount
+    FROM VG_Details_LoanInstalment_Gomo
+    WHERE (AccountNumber LIKE :AccountNumber)

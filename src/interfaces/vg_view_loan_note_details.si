@@ -1,0 +1,16 @@
+DATABASE HiveUAT
+PACKAGE sataxi.db
+OUTPUT HiveDetailsLive
+SERVER HiveUAT
+SCHEMA dbo
+
+TABLE VG_View_LoanNoteDetails
+	AccountNumber			CHAR(50)
+	NoteText				CHAR(1000)
+	NoteCategory			CHAR(250)
+	UserName				CHAR(100)
+	NoteSystem				CHAR(12)
+	CreatedDate				DATE	
+
+KEY PKEY PRIMARY AccountNumber
+PROC SELECTBY AccountNumber as SelectNoteByAccountNumber

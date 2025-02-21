@@ -1,0 +1,12 @@
+bbd-libs-pybus==1.2.3
+bbd-libs-python==4.0.2
+bbdcommon.communications.systemvipc==1.1.15 ;sys_platform == 'linux'
+sataxi-contentstore-messaging==1.0.0.104
+apispec==5.1.1
+pysmb==1.2.8
+asyncio==3.4.3
+psycopg2-binary==2.9.3
+rsa-id-number==0.0.3
+xlsxwriter==3.0.3
+importlib-metadata<5.0
+py-automapper>=1.2.3

@@ -1,0 +1,19 @@
+DATABASE finance
+PACKAGE sataxi.db
+OUTPUT AreaLookup
+SERVER finance
+SCHEMA finance
+
+TABLE Area
+    areaID                IDENTITY
+    areaName              CHAR(100)
+ 
+
+KEY PKEY PRIMARY areaID
+
+PROC SELECTONE
+PROC SELECTALL
+PROC SELECTBY areaName as SelectByAreaName
+PROC INSERT
+PROC UPDATE
+PROC DELETEONE (STANDARD)

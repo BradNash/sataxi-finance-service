@@ -1,0 +1,63 @@
+DATABASE HiveUAT
+PACKAGE sataxi.db
+OUTPUT HiveDetailsLive
+SERVER HiveUAT
+SCHEMA dbo
+
+TABLE VG_Details_Loan
+    AccountNumber		        CHAR(50)
+    AccountHolder		        CHAR(1)
+    AccountStatus		        CHAR(50)
+    VehicleDescription	        CHAR(100)
+    TotalDueCS 			        DOUBLE
+    DeviceHealth 		        CHAR(50)
+    CarTrackSignalDate	        DATETIME
+    Capital                     DOUBLE
+    OutstandingBalance          DOUBLE
+    InstallmentAmount           DOUBLE
+    NextInstallmentAmount       DOUBLE
+    LegalFeeBalance             DOUBLE
+    DealExpiryDate              DATETIME
+    LoanAccruedInt              DOUBLE
+    TotalReceivable             DOUBLE
+    InterestRate                CHAR(22)
+    InitialTerm                 INT
+    InstalmentsRemaining        INT
+    MonthsInArrears             DOUBLE
+    DealExpiryDateWithArrears   DATETIME
+    SettlementDate              DATETIME
+    ChassisNumber               CHAR (30)
+    EngineNumber                CHAR (120)
+    YearOfManufacture           INT
+    RegistrationNumber          INT
+    PaymentMethod               CHAR(50)
+    FirstInstalmentDate         DATE
+    Product                     CHAR(50)
+    EasyPay                     CHAR(25)
+    Agent                       CHAR(100)
+    Supervisor                  CHAR(100)
+    PaymentMTD                  FLOAT
+    ArrearsAccruedInt           DOUBLE
+    Short_Over                  INT
+    SecondaryStatus             CHAR(40)
+    LastPaymentDate             DATETIME
+    LastPaymentAmount           FLOAT
+    PendingActivity             INT
+    LegalAdministrator          CHAR(100)
+    Attorney                    CHAR(100)
+    HandoverDate                DATETIME
+    ArrearsAmountAtHO           FLOAT
+    LSCaseNumber                CHAR(100)
+    SummonsIssueDate            DATETIME
+    SummonsServedDate           DATETIME
+    DateOfJudgement             DATETIME
+    WarrantIssuedDate           DATETIME
+    Source                      CHAR(100)
+    FieldAgent                  CHAR(100)
+    FieldAgentInstruction       CHAR(100)
+    CompanyName                 CHAR(60)
+    NCRRegNo                    CHAR(30)
+    PreviousCompanyName         CHAR(60)
+
+KEY PKEY PRIMARY AccountNumber
+PROC SELECTONEBY AccountNumber as SelectClientDetails

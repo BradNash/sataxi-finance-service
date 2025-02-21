@@ -1,0 +1,16 @@
+image: 761183306127.dkr.ecr.af-south-1.amazonaws.com/sataxi/zaka-leads-batch:${IMAGE_TAG}
+secrets:
+  - name: VANGUARD_DB_SERVER_HOST_NAME
+    valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rds-postgres-credentials-prod-2Ng3nn:host::"
+  - name: VANGUARD_DB_USER
+    valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rds-postgres-credentials-prod-2Ng3nn:username::"
+  - name: VANGUARD_DB_PASSWORD
+    valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rds-postgres-credentials-prod-2Ng3nn:password::"
+  - name: HIVE_DB_SERVER_HOST_NAME
+    valueFrom: "SATFAPPHIVE01.SATAXIFIN.LOCAL\SQL2012"
+  - name: HIVE_DB_USER
+    valueFrom: "svc_vanguard"
+  - name: HIVE_DB_PASSWORD
+    valueFrom: "gBPjoQHumBQ12vitwn0x"
+  - name: AMQP_CONNECTIONSTRING
+    valueFrom: "arn:aws:secretsmanager:af-south-1:743730760644:secret:rabbit-mq-credentials-prod-ZR2Qft:amqp_connection_string::"

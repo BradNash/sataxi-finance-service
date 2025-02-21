@@ -1,0 +1,10 @@
+image: 761183306127.dkr.ecr.af-south-1.amazonaws.com/sataxi/zaka-leads-batch:${IMAGE_TAG}
+secrets:
+  - name: VANGUARD_DB_SERVER_HOST_NAME
+    valueFrom: "arn:aws:secretsmanager:af-south-1:665316528893:secret:rds-postgres-credentials-qa-3RMXJl:host::"
+  - name: VANGUARD_DB_USER
+    valueFrom: "arn:aws:secretsmanager:af-south-1:665316528893:secret:rds-postgres-credentials-qa-3RMXJl:username::"
+  - name: VANGUARD_DB_PASSWORD
+    valueFrom: "arn:aws:secretsmanager:af-south-1:665316528893:secret:rds-postgres-credentials-qa-3RMXJl:password::"
+  - name: AMQP_CONNECTIONSTRING
+    valueFrom: "arn:aws:secretsmanager:af-south-1:665316528893:secret:rabbit-mq-credentials-qa-TLnANe:amqp_connection_string::"

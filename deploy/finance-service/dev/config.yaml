@@ -1,0 +1,99 @@
+finance_service:
+  # DATABASES
+  Databases:
+    Finance:
+      ConnectString: DRIVER={PostgreSQL Unicode};SERVER=$[VANGUARD_DB_SERVER_HOST_NAME:postgresql_database],5432;DATABASE=finance;UID=$[VANGUARD_DB_USER:postgres_admin];PWD=$[VANGUARD_DB_PASSWORD:magical_password];
+      DBType: postgresql_odbc
+    MSG:
+      ConnectString: DRIVER={PostgreSQL Unicode};SERVER=$[VANGUARD_DB_SERVER_HOST_NAME:postgresql_database],5432;DATABASE=Vanguard;UID=$[VANGUARD_DB_USER:postgres_admin];PWD=$[VANGUARD_DB_PASSWORD:magical_password];
+      DBType: postgresql_odbc
+    HiveRepository:
+      ConnectString: DRIVER=ODBC Driver 17 for SQL Server;SERVER=SATFAPPHIVEUAT03.SATAXIFIN.LOCAL\SQL2012,51172;UID=bbdvanguard;PWD=DubaiSittingTruckRed;ApplicationIntent=ReadWrite;Database=HiveUAT;
+      DBType: mssql
+    Gomo:
+      ConnectString: DRIVER=ODBC Driver 17 for SQL Server;SERVER=DBCARMOOLAUAT.SATAXIFIN.LOCAL,1433;UID=svc_vangurd;PWD=Nobod!Kn0ws#1;ApplicationIntent=ReadWrite;Database=Vanguard;
+      DBType: mssql
+  # SECURITY
+  Port: 8080
+  PrincipalServerURI: http://principal.vanguard.dev.sataxi.internal:8080/api/Operations
+  IdentityServerAuthorizeURL: https://identity.dev.sataxi-cloud.co.za/
+  OAuth:
+    VerifySignature: True
+    ValidateScopes: True
+    JWKSUrl: http://identity.vanguard.dev.sataxi.internal:8080/.well-known/openid-configuration/jwks
+    Audience:
+      - sat.fin
+      - gomo.fin
+  # CUSTOM
+  SataxiStatementInfo:
+    StatementApi:
+      URL: http://WEBAPP03_DEV.SATAXIFIN.LOCAL/AcquireStatementAPI_Dev/
+      SharedPath: \\WEBAPP03_DEV.SATAXIFIN.LOCAL\Storage\
+      SystemID: 61
+      SystemName: Vanguard
+      PeriodforQuotationValidity: 10
+      UserID: 4042
+      Username: Vassa
+    ServerDetails:
+      Username: bbdvanguard
+      Password: DubaiSittingTruckRed
+      ServerName: webapp03_dev
+  SignioInfo:
+    URL: https://stage2.signio.co.za/SignioAPI/api/3rdParty/
+    AuthToken: fbb176d7-4751-415b-9d33-051059b7dcd7
+    Authorization: Basic QkJEU09GVERFVjo4OERAUzBmdEQzdiE=
+    DealerCodes:
+      - TradeUp: 3RD127109
+      - Zaka: 3RD127110
+  Timeout: 30
+  # MESSAGES
+  MessageTypes:
+    StatementGeneratedV1:
+      Queue: STATEMENT_GENERATED_V1
+    AttachDocumentV1:
+      Queue: ATTACH_DOCUMENT_V1
+    ZakaCaseCreatedV1:
+      Queue: ZAKA_CASE_CREATED_V1
+    SendEmailCorrespondenceV1:
+      Queue: SEND_EMAIL_CORRESPONDENCE_V1
+    SignioApplicationGeneratedV1:
+      Queue: SIGNIO_APPLICATION_GENERATED_V1
+  HandleMessages:
+    - ZakaCaseCreatedV1
+  Prompters:
+    KombuAMQPBroker:
+      PrompterType: KombuPrompter
+      ConnectionString: $[AMQP_CONNECTIONSTRING:amqp://guest:guest@prompt_rabbitmq_broker:5672//]
+      Exchange: $[AMQP_EXCHANGE:Message_Prompts]
+  DefaultPrompter: KombuAMQPBroker
+  DefaultSerializer: bbdcommon.pybus.serialisers.marshmallow_serializer.MarshmallowSerializer
+  PeriodicCheckTime: 250
+  # LOGGING & CORS
+  CORSAllowed: True
+  CORS_Access-Control-Allow-Origin: https://front-end.dev.sataxi-cloud.co.za
+  CORS_Access-Control-Allow-Headers: x-requested-with, content-type, authorization, x-amzn-trace-id
+  CORS_Access-Control-Expose-Headers: Set-Cookie
+  CORS_Access-Control-Allow-Credentials: true
+  native_logging:
+    version: 1
+    formatters:
+      default:
+        format: $[LOGGING_FORMAT:%(asctime)s %(levelname)-8s %(name)-15s %(message)s]
+        datefmt: "%Y-%m-%d %H:%M:%S"
+    handlers:
+      console:
+        class: logging.StreamHandler
+        level: DEBUG
+        formatter: default
+        stream: ext://sys.stdout
+    loggers:
+      sqlalchemy:
+        level: ERROR
+        propagate: True
+      bbdcommon.tornadohelpers.app_service.health_check_handler:
+        level: WARNING
+        propagate: True
+    root:
+      handlers: [console]
+      level: DEBUG
+      propagate: True

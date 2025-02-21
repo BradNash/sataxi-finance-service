@@ -1,0 +1,204 @@
+DATABASE HiveUAT
+PACKAGE sataxi.db
+OUTPUT HiveDetailsLive
+SERVER HiveUAT
+SCHEMA dbo
+
+TABLE VG_Validation_Loan
+    AccountNumber       CHAR(15)
+	IDNo                CHAR(20)
+    CustomerName        CHAR(100)
+    Mobile              CHAR(25)
+    TaxiAssociation     CHAR(200)
+    ResidentialAddress  CHAR(200)
+    PostalAddress       CHAR(200)
+    NextInstalmentDate  DATETIME
+    InstalmentDay       INT
+    PaymentType         CHAR(5)
+    LoanStartDate       DATETIME
+    BankAccountNumber   CHAR(30)
+    BankAccountType     CHAR(7)
+    BankName            CHAR(70)
+    EmailAddress        CHAR(255)
+KEY PKEY PRIMARY AccountNumber
+
+PROC SelectLoanDetails
+INPUT
+	AccountNumber		        CHAR(15)
+OUTPUT
+	AccountNumber		        =
+    InstalmentDay		        =
+	AccountStatus		        CHAR(50)
+    LoanStartDate		        =
+    PaymentMethod		        CHAR(5)
+    AccountHolder		        CHAR(1)
+    BankAccountNumber	        =
+    BankAccountType		        =
+    BankName			        =
+    VehicleDescription	        CHAR(150)
+    TotalDueCS 			        DOUBLE
+    DeviceHealth 		        CHAR(50)
+    CarTrackSignalDate	        DATETIME
+    Capital                     DOUBLE
+    OutstandingBalance          DOUBLE
+    InstallmentAmount           DOUBLE
+    NextInstallmentAmount       DOUBLE
+    NextInstalmentDate          =
+    LegalFeeBalance             DOUBLE
+    DealExpiryDate              DATE
+    LoanAccruedInt              DOUBLE
+    TotalReceivable             DOUBLE
+    InterestRate                CHAR(22)
+    InitialTerm                 INT
+    InstalmentsRemaining        INT
+    MonthsInArrears             FLOAT
+    DealExpiryDateWithArrears   DATETIME
+    SettlementDate              DATETIME
+    ChassisNumber               CHAR(30)
+    EngineNumber                CHAR(120)
+    YearOfManufacture           INT
+    RegistrationNumber          INT
+    FirstInstalmentDate         DATE
+    Product                     CHAR(50)
+    EasyPay                     CHAR(25)
+    Source                      CHAR(100)
+    FieldAgent                  CHAR(100)
+    FieldAgentInstruction       CHAR(100)
+    CompanyName                 CHAR(50)
+    NCRRegNo                    CHAR(30)
+    PreviousCompanyName         CHAR(50)
+SQLCODE
+	SELECT
+	    vl.AccountNumber,
+    	vl.InstalmentDay,
+    	dl.AccountStatus,
+    	vl.LoanStartDate,
+    	vl.PaymentType as PaymentMethod,
+    	dl.AccountHolder,
+    	vl.BankAccountNumber,
+    	vl.BankAccountType,
+    	vl.BankName,
+    	dl.VehicleDescription,
+    	dl.TotalDueCS,
+    	dl.DeviceHealth,
+    	dl.CarTrackSignalDate,
+        dl.Capital,
+        dl.OutstandingBalance,
+        dl.InstallmentAmount,
+        dl.NextInstallmentAmount,
+        vl.NextInstalmentDate,
+        dl.LegalFeeBalance,
+        dl.DealExpiryDate,
+        dl.LoanAccruedInt,
+        dl.TotalReceivable,
+        dl.InterestRate,
+        dl.InitialTerm,
+        dl.InstalmentsRemaining,
+        dl.MonthsInArrears,
+        dl.DealExpiryDateWithArrears,
+        dl.SettlementDate,
+        dl.ChassisNumber,
+        dl.EngineNumber,
+        dl.YearOfManufacture,
+        dl.RegistrationNumber,
+        dl.FirstInstalmentDate,
+        dl.Product,
+        dl.EasyPay,
+        dl.Source,
+        dl.FieldAgent,
+        dl.FieldAgentInstruction,
+        dl.CompanyName,
+        dl.NCRRegNo,
+        dl.PreviousCompanyName
+	FROM [VG_Validation_Loan] vl
+        INNER JOIN [VG_Details_Loan] dl ON vl.AccountNumber = dl.AccountNumber
+	WHERE vl.AccountNumber LIKE :AccountNumber
+ENDCODE
+
+PROC SelectAccountByAccountNumber
+INPUT
+    AccountNumber       CHAR
+OUTPUT
+    AccountNumber       CHAR
+	IDNo 		        CHAR
+    CustomerName        CHAR
+    Mobile              CHAR
+	TaxiAssociation	    CHAR
+	ResidentialAddress  CHAR
+    PostalAddress       CHAR
+    NextInstalmentDate  CHAR
+    InstalmentDay       CHAR
+    PaymentType         CHAR
+    LoanStartDate       CHAR
+    BankAccountNumber   CHAR
+    BankAccountType     CHAR
+    BankName            CHAR
+    AccountStatus       CHAR
+    TotalDueCS          DOUBLE
+    EmailAddress        CHAR
+SQLCODE
+  SELECT vl.AccountNumber
+	  ,vl.IDNo
+      ,vl.CustomerName
+      ,vl.Mobile
+      ,vl.TaxiAssociation
+      ,vl.ResidentialAddress
+      ,vl.PostalAddress
+      ,vl.NextInstalmentDate
+      ,vl.InstalmentDay
+      ,vl.PaymentType
+      ,vl.LoanStartDate
+      ,vl.BankAccountNumber
+      ,vl.BankAccountType
+      ,vl.BankName
+      ,dl.AccountStatus
+      ,dl.TotalDueCS
+      ,vl.EmailAddress
+    FROM [VG_Validation_Loan] vl
+        LEFT OUTER JOIN [VG_Details_Loan] dl ON vl.AccountNumber = dl.AccountNumber
+    WHERE vl.AccountNumber LIKE :AccountNumber
+ENDCODE
+
+PROC SelectAccountByID
+INPUT
+    IDNo                CHAR
+OUTPUT
+    AccountNumber       CHAR
+	IDNo 		        CHAR
+    CustomerName        CHAR
+    Mobile              CHAR
+	TaxiAssociation	    CHAR
+	ResidentialAddress  CHAR
+    PostalAddress       CHAR
+    NextInstalmentDate  CHAR
+    InstalmentDay       CHAR
+    PaymentType         CHAR
+    LoanStartDate       CHAR
+    BankAccountNumber   CHAR
+    BankAccountType     CHAR
+    BankName            CHAR
+    AccountStatus       CHAR
+    TotalDueCS          DOUBLE
+    EmailAddress        CHAR
+SQLCODE
+  SELECT vl.AccountNumber
+	  ,vl.IDNo
+      ,vl.CustomerName
+      ,vl.Mobile
+      ,vl.TaxiAssociation
+      ,vl.ResidentialAddress
+      ,vl.PostalAddress
+      ,vl.NextInstalmentDate
+      ,vl.InstalmentDay
+      ,vl.PaymentType
+      ,vl.LoanStartDate
+      ,vl.BankAccountNumber
+      ,vl.BankAccountType
+      ,vl.BankName
+      ,dl.AccountStatus
+      ,dl.TotalDueCS
+      ,vl.EmailAddress
+    FROM [VG_Validation_Loan] vl
+        LEFT OUTER JOIN [VG_Details_Loan] dl ON vl.AccountNumber = dl.AccountNumber
+    WHERE (vl.IDNo = :IDNo)
+ENDCODE

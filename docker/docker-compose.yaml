@@ -1,0 +1,95 @@
+version: "3.7"
+name: sataxi-finance
+services:
+  jportal2:
+    container_name: finance_jportal2
+    image: 761183306127.dkr.ecr.af-south-1.amazonaws.com/si-gen/jportal2:1.10.1
+    command: |
+      --inputdir /src/interfaces
+      --template-location /jportal2/downloaded_jportal_templates/
+      --template-generator SQLAlchemy:/src/python/sataxi/finance/db
+      --flag SQLAlchemy.generateSQLAlchemyBase
+      --builtin-generator PostgresDDL:/database/generated_sql
+      --download-template-location=/jportal2/downloaded_jportal_templates/
+      --download-template "SQLAlchemy:https://github.com/SI-Gen/jportal2-generator-vanguard-sqlalchemy/archive/refs/tags/2.3.zip|stripBaseDir"
+    volumes:
+      - ../downloaded_jportal_templates:/jportal2/downloaded_jportal_templates/
+      - ../src/interfaces:/src/interfaces
+      - ../src/python/sataxi/finance/db:/src/python/sataxi/finance/db
+      - ../database/generated_sql:/database/generated_sql
+
+  swagger:
+    container_name: finance_swagger
+    image: 761183306127.dkr.ecr.af-south-1.amazonaws.com/swaggerapi/swagger-codegen-cli-v3:3.0.33
+    command: |
+      generate
+      -i /src/python/sataxi/finance/services/finance_service_apispec.yaml
+      -l typescript-angular
+      -o /src/angular/packages/sataxi/finance-service-api/src/lib
+      -c /src/angular/finance_service_config.json
+    volumes:
+      - ../src/python:/src/python
+      - ../src/angular:/src/angular
+
+  tox:
+    container_name: finance_tox
+    image: 761183306127.dkr.ecr.af-south-1.amazonaws.com/sataxi/python-tox:1.0.0
+    environment:
+      AWS_PIP_INDEX_URL: ${AWS_PIP_INDEX_URL}
+    volumes:
+      - ../:/app/tox
+
+  flyway:
+    container_name: finance_flyway
+    image: flyway/flyway:8.5.10
+    command: migrate
+    environment:
+      VANGUARD_DB_USER: postgres_admin
+      VANGUARD_DB_PASSWORD: magical_password
+      VANGUARD_DB_SERVER_HOST_NAME: postgresql_database
+      VANGUARD_DB_NAME: finance
+      VANGUARD_MIGRATION_DIRS: /flyway/sql
+    volumes:
+      - ../database/flyway/flyway.conf:/flyway/conf/flyway.conf
+      - ../database/flyway/scripts:/flyway/sql/scripts
+      - ../database/flyway/test-data-scripts:/flyway/sql/test-data-scripts
+    networks:
+      - sataxi_network
+
+  finance:
+    container_name: finance
+    build:
+      context: ..
+      dockerfile: ./docker/finance-service/Dockerfile
+      args:
+        AWS_PIP_INDEX_URL: ${AWS_PIP_INDEX_URL}
+    command: [ "--disable_xray", "--debug_mode" ]
+    volumes:
+      - source: ./finance-service/config.yaml
+        target: /config/config.yaml
+        type: bind
+    environment:
+      SERVICE_PORT: 8080
+      FINANCE_CONNECTIONSTRING: DRIVER={PostgreSQL Unicode};SERVER=postgresql_database,5432;DATABASE=finance;UID=postgres_admin;PWD=magical_password;
+      MSG_CONNECTIONSTRING: DRIVER={PostgreSQL Unicode};SERVER=postgresql_database,5432;DATABASE=Vanguard;UID=postgres_admin;PWD=magical_password;
+      PRINCIPAL_SERVER_URI: http://principal:8080/api/Operations
+      JWKS_URL: http://identity:8080/.well-known/openid-configuration/jwks
+      AMQP_CONNECTIONSTRING: amqp://guest:guest@prompt_rabbitmq_broker:5672//
+      OTEL_EXPORTER_OTLP_ENDPOINT: http://otel-collector:4317
+      OTEL_RESOURCE_ATTRIBUTES: service.name=finance
+    ports:
+      - target: 8080
+        published: 13155
+    healthcheck:
+      test: [ "CMD", "curl", "http://localhost:8080/health_check" ]
+      interval: 5s
+      timeout: 1s
+      retries: 2
+    networks:
+      - sataxi_network
+    depends_on:
+      - "flyway"
+
+networks:
+  sataxi_network:
+    name: sataxi_network
